@@ -10,10 +10,10 @@ public class Ruutu {
 
     public Ruutu(int y, int x) throws FileNotFoundException {
         this.sijainti = new Sijainti(y, x);
-        this.sisalto = new Kirjain();
+        this.sisalto = new Merkki();
     }
     
-    public void tyhjennaRuudunSisalto(){
+    public void tyhjennaRuudunSisalto() {
         this.sisalto = null;
     }
 

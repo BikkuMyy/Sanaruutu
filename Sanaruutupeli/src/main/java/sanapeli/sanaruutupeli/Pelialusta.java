@@ -26,13 +26,13 @@ public class Pelialusta {
         this.ruudukko[y][x] = new Ruutu(y, x);
     }
     
-    public void tulostaTilanne(){
+    public void tulostaTilanne() {
         for (int y = 0; y < (this.ruudukko.length); y++) {
             for (int x = 0; x < (this.ruudukko[y].length); x++) {
                 Object ruutu = ruudukko[y][x];
                 
-                if (ruutu == null){
-                    System.out.print("X");
+                if (ruutu == null) {
+                    System.out.print("*");
                 } else {
                     System.out.print(ruutu.toString());
                 }

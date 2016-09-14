@@ -3,20 +3,23 @@ import java.io.FileNotFoundException;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import sanapeli.sanaruutupeli.Kirjain;
+import sanapeli.sanaruutupeli.Merkki;
 
 
-public class KirjainTest {
+public class MerkkiTest {
     
-    private Kirjain kirjain;
+    private Merkki merkki;
     
-    public KirjainTest() {
+    public MerkkiTest() {
     }
     
     @Before
     public void setUp() throws FileNotFoundException {
-        this.kirjain = new Kirjain();
+        this.merkki = new Merkki();
     }
     
-    
+    @Test
+    public void konstruktoriAsettaaOikeanSisallonMerkille(){
+        assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(merkki.getSisalto()));
+    }
 }

@@ -4,15 +4,12 @@ package sanapeli.sanaruutupeli;
 import java.io.FileNotFoundException;
 
 
-public class Kirjain extends Sisalto {
-    private String kirjain;
-    private Randomizer randomizer;
-    //randomizer pitäs saaha jonnekki muualle ettei jokainen kirjain lois sitä uudestaan
-    //private int pisteet;
+public class Merkki extends Sisalto {
+    private String merkki;
+//    private int pisteet;
 
-    public Kirjain() throws FileNotFoundException {
-        this.randomizer = new Randomizer("kirjaimet.txt");
-        this.kirjain = randomizer.satunnainenMerkki();
+    public Merkki() throws FileNotFoundException {
+        this.merkki = super.randomizer.satunnainenMerkki();
     }
 
 //    public int getPisteet() {
@@ -21,12 +18,12 @@ public class Kirjain extends Sisalto {
 
     @Override
     public String getSisalto() {
-        return kirjain;
+        return merkki;
     }
 
     @Override
     public String toString() {
-        return this.kirjain;
+        return this.merkki;
     }
     
     

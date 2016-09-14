@@ -11,7 +11,7 @@ public class Sanapeli {
         this.pelialusta = new Pelialusta();
     }
     
-    public void kaynnista() throws FileNotFoundException{
+    public void kaynnista() throws FileNotFoundException {
         
         pelialusta.luoAlkuTilanne();
         pelialusta.tulostaTilanne();

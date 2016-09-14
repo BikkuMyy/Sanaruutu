@@ -17,6 +17,7 @@ public class Randomizer {
         this.tiedosto = new File(tiedostonNimi);
         this.rivit = new ArrayList<>();
         lueTiedostoListaan();
+        //pitäiskö olla erillinen luokka tiedoston lukemiselle ja randomizingille?
     }
     
     private void lueTiedostoListaan() throws FileNotFoundException {
