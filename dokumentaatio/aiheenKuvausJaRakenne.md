@@ -18,4 +18,7 @@ Peliä voisi laajentaa lisäämällä pistelaskuominaisuus, jolloin pitkistä sa
 - Valittujen kirjaimien tyhjentäminen
 - Sanan hyväksyminen
 
+##Luokkakaavio
+
+![Luokkakaavio](/dokumentaatio/Luokkakaavio.png "Luokkakaavio")
 
