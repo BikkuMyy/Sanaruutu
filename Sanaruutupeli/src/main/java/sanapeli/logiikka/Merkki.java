@@ -1,5 +1,5 @@
 
-package sanapeli.sanaruutupeli;
+package sanapeli.logiikka;
 
 import java.io.FileNotFoundException;
 

@@ -1,3 +1,5 @@
+package sanapeli.logiikka;
+
 
 
 import java.io.FileNotFoundException;
@@ -5,7 +7,6 @@ import java.io.FileNotFoundException;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import sanapeli.sanaruutupeli.Randomizer;
 
 
 public class RandomizerTest {

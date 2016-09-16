@@ -1,9 +1,10 @@
+package sanapeli.logiikka;
+
 
 import java.io.FileNotFoundException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
-import sanapeli.sanaruutupeli.Pelialusta;
 
 
 public class PelialustaTest {
@@ -33,14 +34,24 @@ public class PelialustaTest {
     @Test
     public void sisallonLisaaminenRuutuuToimii() throws FileNotFoundException{
         this.pelialusta.lisaaRuutuunSisalto(1, 2);
-        //Randomin testauksen ongelma
+        assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(this.pelialusta.getRuudukko()[1][2].toString()));
     }
     
     @Test
-    public void pelinAlkutilanneLuodaanOikein(){
+    public void pelinAlkutilanneLuodaanOikein() throws FileNotFoundException{
         this.pelialusta = new Pelialusta();
-        Object [][] ruudukko = pelialusta.getRuudukko();
+        pelialusta.luoAlkuTilanne();
+        Ruutu [][] ruudukko = pelialusta.getRuudukko();
+        
+        for (int y = (ruudukko.length / 2 - 1); y <= (ruudukko.length / 2 + 1); y++) {
+            for (int x = (ruudukko[y].length / 2 - 1); x <= (ruudukko[y].length / 2 + 1); x++) {
+                Ruutu ruutu = ruudukko[y][x];
+                assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(ruutu.toString()));
+            }
+        }
     }
+    
+    
 
     
 }

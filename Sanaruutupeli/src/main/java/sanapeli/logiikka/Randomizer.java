@@ -1,4 +1,4 @@
-package sanapeli.sanaruutupeli;
+package sanapeli.logiikka;
 
 // tarvii paremman nimen!
 import java.io.File;
@@ -17,7 +17,7 @@ public class Randomizer {
         this.tiedosto = new File(tiedostonNimi);
         this.rivit = new ArrayList<>();
         lueTiedostoListaan();
-        //pitäiskö olla erillinen luokka tiedoston lukemiselle ja randomizingille?
+        //pitäis varmaan olla erillinen luokka tiedoston lukemiselle ja randomizingille?
     }
     
     private void lueTiedostoListaan() throws FileNotFoundException {

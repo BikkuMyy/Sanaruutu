@@ -1,5 +1,5 @@
 
-package sanapeli.sanaruutupeli;
+package sanapeli.logiikka;
 
 public class Sijainti {
     int x;

@@ -1,5 +1,5 @@
 
-package sanapeli.sanaruutupeli;
+package sanapeli.logiikka;
 
 import java.io.FileNotFoundException;
 
@@ -14,10 +14,10 @@ public class Sanapeli {
     public void kaynnista() throws FileNotFoundException {
         
         pelialusta.luoAlkuTilanne();
-        pelialusta.tulostaTilanne();
-        //looppi
+//        pelialusta.tulostaTilanne();
+        // ->looppi 
     }
-    
+     
     
     
     
