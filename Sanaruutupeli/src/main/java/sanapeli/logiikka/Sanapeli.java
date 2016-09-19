@@ -14,8 +14,8 @@ public class Sanapeli {
     public void kaynnista() throws FileNotFoundException {
         
         pelialusta.luoAlkuTilanne();
-//        pelialusta.tulostaTilanne();
-        // ->looppi 
+        pelialusta.tulostaTilanne();
+        // ->looppi? 
     }
      
     

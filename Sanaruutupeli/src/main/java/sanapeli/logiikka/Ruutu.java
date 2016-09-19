@@ -2,27 +2,31 @@ package sanapeli.logiikka;
 
 import java.io.FileNotFoundException;
 
-public class Ruutu implements Sanaruutu {
+public class Ruutu {
 
     private Sijainti sijainti;
     private Sisalto sisalto;
 
-    public Ruutu(int y, int x) throws FileNotFoundException {
+    public Ruutu(int y, int x) {
         this.sijainti = new Sijainti(y, x);
+        this.sisalto = null;
+    }
+    
+    public void lisaaRuutuunSisalto() throws FileNotFoundException{
         this.sisalto = new Merkki();
     }
 
-    @Override
+   
     public void tyhjennaRuudunSisalto() {
         this.sisalto = null;
     }
 
-    @Override
+    
     public Sijainti getSijainti() {
         return this.sijainti;
     }
 
-    @Override
+    
     public Sisalto getSisalto() {
         return this.sisalto;
     }

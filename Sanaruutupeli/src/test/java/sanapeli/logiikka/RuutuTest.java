@@ -37,10 +37,10 @@ public class RuutuTest {
         assertEquals(1, this.ruutu.getSijainti().getY());
     }
     
-    @Test
-    public void tulostusToimiiOikein(){
-        assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(this.ruutu.toString()));
-    }
+//    @Test
+//    public void tulostusToimiiOikein(){
+//        assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(this.ruutu.toString()));
+//    }
 
 
 }

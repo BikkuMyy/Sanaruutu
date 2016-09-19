@@ -8,3 +8,4 @@ Päivä | Tunnit | Kuvaus
 11.09.2016 | 2 h | Ohjelmalogiikan ohjemoinnin jatkaminen, testien teko
 14.09.2016 | 2 h | Lisää testien kirjoittamista, luokkakaavion piirtäminen
 16.09.2016 | 2 h | Pit- ja checkstyle-raportit
+19.09.2016 | 1 h | Käyttöliittymän ohjelmoinnin aloittelua

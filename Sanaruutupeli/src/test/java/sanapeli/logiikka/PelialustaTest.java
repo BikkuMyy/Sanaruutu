@@ -31,11 +31,11 @@ public class PelialustaTest {
         assertEquals(9, pelialusta.getRuudukko().length);
     }
     
-    @Test
-    public void sisallonLisaaminenRuutuuToimii() throws FileNotFoundException{
-        this.pelialusta.lisaaRuutuunSisalto(1, 2);
-        assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(this.pelialusta.getRuudukko()[1][2].toString()));
-    }
+//    @Test
+//    public void sisallonLisaaminenRuutuuToimii() throws FileNotFoundException{
+//        this.pelialusta.lisaaRuutuunSisalto(1, 2);
+//        assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(this.pelialusta.getRuudukko()[1][2].toString()));
+//    }
     
     @Test
     public void pelinAlkutilanneLuodaanOikein() throws FileNotFoundException{
