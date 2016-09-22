@@ -7,10 +7,10 @@ import java.awt.event.ActionListener;
 import javax.swing.JTextArea;
 
 
-public class KlikkaustenKuuntelija implements ActionListener {
+public class MerkkiNappienKuuntelija implements ActionListener {
     private JTextArea sanakentta;
 
-    public KlikkaustenKuuntelija() {
+    public MerkkiNappienKuuntelija() {
     }
 
     public void setSanakentta(JTextArea sanakentta) {

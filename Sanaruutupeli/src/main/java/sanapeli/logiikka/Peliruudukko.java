@@ -2,7 +2,7 @@
 package sanapeli.logiikka;
 
 
-public interface Sanaruutu {
+public interface Peliruudukko {
     //nimi vois olla kuvaavampi
     
     Ruutu [][] getRuudukko();

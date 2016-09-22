@@ -37,6 +37,7 @@
                 <version>1.1.8</version>
                 <configuration>
                     <excludedClasses>
+                        <param>sanapeli.kayttoliittyma*</param>
                         <param>sanapeli.logiikka.Main*</param>
                         <param>sanapeli.logiikka.Sanapeli*</param>
                     </excludedClasses>

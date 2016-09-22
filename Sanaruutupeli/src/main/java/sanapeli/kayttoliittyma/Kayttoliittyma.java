@@ -10,38 +10,36 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
-import sanapeli.logiikka.Sanaruutu;
-
+import sanapeli.logiikka.Peliruudukko;
 
 
 public class Kayttoliittyma implements Runnable {
-    private Sanaruutu sanaruutu;
-    private JFrame ruudukko;
+    private Peliruudukko ruudukko;
+    private JFrame ikkuna;
     private int koko;
-    private KlikkaustenKuuntelija kuuntelija;
+    private MerkkiNappienKuuntelija kuuntelija;
 
-    public Kayttoliittyma(int koko, Sanaruutu ruutu) {
-        this.sanaruutu = ruutu;
-        this.kuuntelija = new KlikkaustenKuuntelija();
+    public Kayttoliittyma(int koko, Peliruudukko ruudukko) {
+        this.ruudukko = ruudukko;
+        this.kuuntelija = new MerkkiNappienKuuntelija();
         this.koko = koko;
     }
 
-    public Kayttoliittyma(Sanaruutu ruutu) {
+    public Kayttoliittyma(Peliruudukko ruutu) {
         this(7, ruutu);
     }
-    
 
     @Override
     public void run() {
-        ruudukko = new JFrame("Sanaruutupeli");
-        ruudukko.setPreferredSize(new Dimension(500, 550));
+        ikkuna = new JFrame("Sanaruutupeli");
+        ikkuna.setPreferredSize(new Dimension(500, 550));
         
-        ruudukko.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        ikkuna.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         
-        luoKomponentit(ruudukko.getContentPane());
+        luoKomponentit(ikkuna.getContentPane());
 
-        ruudukko.pack();
-        ruudukko.setVisible(true);
+        ikkuna.pack();
+        ikkuna.setVisible(true);
     }
     
     private void luoKomponentit(Container container) {
@@ -62,9 +60,9 @@ public class Kayttoliittyma implements Runnable {
         hyvaksy.setPreferredSize(new Dimension(125, 50));
         alaosa.add(hyvaksy, BorderLayout.CENTER);
         
-        JButton poista = new JButton("Poista");
-        poista.setPreferredSize(new Dimension(125, 50));
-        alaosa.add(poista, BorderLayout.EAST);
+        JButton tyhjenna = new JButton("Tyhjennä");
+        tyhjenna.setPreferredSize(new Dimension(125, 50));
+        alaosa.add(tyhjenna, BorderLayout.EAST);
         
         return alaosa;
     }
@@ -75,12 +73,10 @@ public class Kayttoliittyma implements Runnable {
         
         for (int i = 0; i < koko; i++) {
             for (int j = 0; j < koko; j++) {
-                Nappi nappi = new Nappi(i, j, sanaruutu);
+                Nappi nappi = new Nappi(i, j, ruudukko);
                 ylaosa.add(nappi);
                 nappi.addActionListener(kuuntelija);
-                
             }
-            
         }
         return ylaosa;
     }

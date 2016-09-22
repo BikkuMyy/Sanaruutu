@@ -19,8 +19,8 @@ public class RuutuTest {
     
     @Test
     public void konstruktoriAsettaaSijainninOikein(){
-        assertEquals(2, this.ruutu.getSijainti().getX());
-        assertEquals(1, this.ruutu.getSijainti().getY());
+        assertEquals(2, this.ruutu.getX());
+        assertEquals(1, this.ruutu.getY());
     }
     
     @Test
@@ -33,14 +33,14 @@ public class RuutuTest {
     @Test
     public void ruudunTyhjennysEiPoistaSijaintia(){
         this.ruutu.tyhjennaRuudunSisalto();
-        assertEquals(2, this.ruutu.getSijainti().getX());
-        assertEquals(1, this.ruutu.getSijainti().getY());
+        assertEquals(2, this.ruutu.getX());
+        assertEquals(1, this.ruutu.getY());
     }
     
-//    @Test
-//    public void tulostusToimiiOikein(){
-//        assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(this.ruutu.toString()));
-//    }
+    @Test
+    public void tulostusToimiiOikein(){
+        assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(this.ruutu.toString()));
+    }
 
 
 }

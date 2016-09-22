@@ -2,16 +2,16 @@ package sanapeli.logiikka;
 
 import java.io.FileNotFoundException;
 
-public class Pelialusta implements Sanaruutu{
+public class Pelialusta implements Peliruudukko{
 
     private Ruutu [][] ruudukko;
 
-    public Pelialusta() {
-        this.ruudukko = new Ruutu[7][7];
-    }
-
     public Pelialusta(int koko) {
         this.ruudukko = new Ruutu[koko][koko];
+    }
+    
+     public Pelialusta() {
+        this(7);
     }
 
     public void luoAlkuTilanne() throws FileNotFoundException {
@@ -19,7 +19,7 @@ public class Pelialusta implements Sanaruutu{
         lisaaAlkuMerkit();
     }
     
-    private void lisaaAlustaanRuudut() throws FileNotFoundException {
+    public void lisaaAlustaanRuudut() throws FileNotFoundException {
         for (int y = 0; y < (this.ruudukko.length); y++) {
             for (int x = 0; x < (this.ruudukko[y].length); x++) {
                 this.ruudukko[y][x] = new Ruutu(y, x);
@@ -40,11 +40,11 @@ public class Pelialusta implements Sanaruutu{
             for (int x = 0; x < (this.ruudukko[y].length); x++) {
                 Ruutu ruutu = ruudukko[y][x];
                 
-//                if (ruutu.getSisalto() == null) {
-//                    System.out.print("*");
-//                } else {
+                if (ruutu.getSisalto() == null) {
+                    System.out.print("*");
+                } else {
                     System.out.print(ruutu.toString());
-//                }
+                }
             }
             System.out.println("");
         }

@@ -31,24 +31,32 @@ public class PelialustaTest {
         assertEquals(9, pelialusta.getRuudukko().length);
     }
     
-//    @Test
-//    public void sisallonLisaaminenRuutuuToimii() throws FileNotFoundException{
-//        this.pelialusta.lisaaRuutuunSisalto(1, 2);
-//        assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(this.pelialusta.getRuudukko()[1][2].toString()));
-//    }
+    @Test
+    public void ruutujenLisaaminenAlustaanToimii() throws FileNotFoundException{
+        pelialusta.lisaaAlustaanRuudut();
+        Ruutu [][] ruudukko = pelialusta.getRuudukko();
+        
+        for (int y = 0; y < ruudukko.length; y++) {
+            for (int x = 0; x < ruudukko[y].length; x++) {
+                Ruutu ruutu = ruudukko[y][x];
+                assertTrue(ruutu != null);
+            }
+        }
+    }
     
     @Test
-    public void pelinAlkutilanneLuodaanOikein() throws FileNotFoundException{
-        this.pelialusta = new Pelialusta();
-        pelialusta.luoAlkuTilanne();
+    public void alkuMerkitLisataanOikein() throws FileNotFoundException{
+        pelialusta.lisaaAlustaanRuudut();
+        pelialusta.lisaaAlkuMerkit();
         Ruutu [][] ruudukko = pelialusta.getRuudukko();
         
         for (int y = (ruudukko.length / 2 - 1); y <= (ruudukko.length / 2 + 1); y++) {
             for (int x = (ruudukko[y].length / 2 - 1); x <= (ruudukko[y].length / 2 + 1); x++) {
-                Ruutu ruutu = ruudukko[y][x];
-                assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(ruutu.toString()));
+                assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(ruudukko[y][x].toString()));
             }
         }
+        
+        
     }
     
     

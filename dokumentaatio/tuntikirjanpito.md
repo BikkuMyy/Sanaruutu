@@ -11,3 +11,4 @@ Päivä | Tunnit | Kuvaus
 19.09.2016 | 1 h | Käyttöliittymän ohjelmoinnin aloittelua
 21.09.2016 | 1 h | Käyttöliittymää - ActionListener
 22.09.2016 | 2 h | Käyttöliittymän rukkausta (paja)
+22.09.2016 | 1 h | Luokkakaavion ja testien päivittäminen

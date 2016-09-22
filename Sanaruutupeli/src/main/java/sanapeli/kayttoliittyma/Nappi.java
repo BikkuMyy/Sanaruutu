@@ -1,20 +1,19 @@
 package sanapeli.kayttoliittyma;
 
 import javax.swing.JButton;
-import sanapeli.logiikka.Sanaruutu;
+import sanapeli.logiikka.Peliruudukko;
 
 public class Nappi extends JButton {
 
-    private Sanaruutu sanaruutu;
+    private Peliruudukko ruudukko;
     private String merkki;
     private int y;
     private int x;
 
-    public Nappi(int y, int x, Sanaruutu ruutu) {
-        this.sanaruutu = ruutu;
+    public Nappi(int y, int x, Peliruudukko ruudukko) {
+        this.ruudukko = ruudukko;
         this.y = y;
         this.x = x;
-//        super.setText(this.merkki = ":D");
         super.setText(this.merkki = haeNappiinMerkkiRuudusta());
         
     }
@@ -24,7 +23,7 @@ public class Nappi extends JButton {
     }
 
     private String haeNappiinMerkkiRuudusta() {
-        return sanaruutu.getRuudukko()[y][x].toString();
+        return ruudukko.getRuudukko()[y][x].toString();
 
     }
 
