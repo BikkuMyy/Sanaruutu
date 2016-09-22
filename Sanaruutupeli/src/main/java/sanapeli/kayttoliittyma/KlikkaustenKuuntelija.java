@@ -4,19 +4,24 @@ package sanapeli.kayttoliittyma;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
+import javax.swing.JTextArea;
 
 
 public class KlikkaustenKuuntelija implements ActionListener {
-    private JButton nappi;
+    private JTextArea sanakentta;
 
-    public KlikkaustenKuuntelija(JButton nappi) {
-        this.nappi = nappi;
+    public KlikkaustenKuuntelija() {
+    }
+
+    public void setSanakentta(JTextArea sanakentta) {
+        this.sanakentta = sanakentta;
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        this.nappi.setBackground(Color.CYAN);
+        Nappi nappi = (Nappi) e.getSource();
+        nappi.setBackground(Color.CYAN);
+        sanakentta.setText(sanakentta.getText() + nappi.getMerkki());
         
     }
     

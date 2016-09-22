@@ -15,9 +15,13 @@ public class Sanapeli {
         
         pelialusta.luoAlkuTilanne();
         pelialusta.tulostaTilanne();
-        // ->looppi? 
+        
     }
-     
+
+    public Pelialusta getPelialusta() {
+        return pelialusta;
+    }
+    
     
     
     

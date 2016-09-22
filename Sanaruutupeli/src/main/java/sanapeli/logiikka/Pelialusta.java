@@ -40,11 +40,11 @@ public class Pelialusta implements Sanaruutu{
             for (int x = 0; x < (this.ruudukko[y].length); x++) {
                 Ruutu ruutu = ruudukko[y][x];
                 
-                if (ruutu.getSisalto() == null) {
-                    System.out.print("*");
-                } else {
+//                if (ruutu.getSisalto() == null) {
+//                    System.out.print("*");
+//                } else {
                     System.out.print(ruutu.toString());
-                }
+//                }
             }
             System.out.println("");
         }
