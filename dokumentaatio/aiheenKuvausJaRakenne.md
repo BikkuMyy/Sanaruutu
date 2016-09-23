@@ -20,7 +20,7 @@ Peliä voisi laajentaa lisäämällä pistelaskuominaisuus, jolloin pitkistä sa
 
 ##Luokkakaavio
 
-- Luokkakaavio, jossa logiikka- ja käyttöliittymäpakkaukset eritelty
+- Ensisijainen luokkakaavio, jossa logiikka- ja käyttöliittymäpakkaukset eritelty
 ![PakkausLuokkakaavio](/dokumentaatio/Luokkakaavio.png "Pakkaus-luokkakaavio")
 
 - Luokkakaavio, jossa myös kytkentärajoitukset
