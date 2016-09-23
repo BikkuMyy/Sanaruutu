@@ -3,6 +3,7 @@ package sanapeli.logiikka;
 import java.io.FileNotFoundException;
 
 public class Ruutu {
+
     private int y;
     private int x;
     private Sisalto sisalto;
@@ -11,11 +12,11 @@ public class Ruutu {
         this.y = y;
         this.x = x;
     }
-    
-    public void lisaaRuutuunSisalto() throws FileNotFoundException{
+
+    public void lisaaRuutuunSisalto() throws FileNotFoundException {
         this.sisalto = new Merkki();
     }
-    
+
     public void tyhjennaRuudunSisalto() {
         this.sisalto = null;
     }
@@ -27,16 +28,16 @@ public class Ruutu {
     public int getX() {
         return x;
     }
-    
+
     public Sisalto getSisalto() {
         return this.sisalto;
     }
 
     @Override
     public String toString() {
-        if (this.sisalto == null){
+        if (this.sisalto == null) {
             return "";
-            
+
         }
         return this.sisalto.toString();
     }

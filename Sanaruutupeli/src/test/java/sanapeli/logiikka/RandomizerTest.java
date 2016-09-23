@@ -23,7 +23,7 @@ public class RandomizerTest {
     
     @Test
     public void konstruktoriLukeeTiedoston(){
-        assertEquals(43, randomizer.getRivit().size());
+        assertTrue(randomizer.getRivit().size() > 0);
     }
     
     

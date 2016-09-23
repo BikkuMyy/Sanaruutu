@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2016</copyright>
     <item>
-      <title>File: 9,
+      <title>File: 11,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -47,6 +47,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#sanapeli.logiikka.Randomizer.java">sanapeli/logiikka/Randomizer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#sanapeli.kayttoliittyma.MerkkiNappienKuuntelija.java">sanapeli/kayttoliittyma/MerkkiNappienKuuntelija.java</a>
                 </td>
                 <td>
                   0
@@ -116,7 +130,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#sanapeli.logiikka.Sijainti.java">sanapeli/logiikka/Sijainti.java</a>
+                  <a href="${project.url}/checkstyle.html#sanapeli.kayttoliittyma.Nappi.java">sanapeli/kayttoliittyma/Nappi.java</a>
                 </td>
                 <td>
                   0
@@ -130,7 +144,21 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#sanapeli.logiikka.Sanaruutu.java">sanapeli/logiikka/Sanaruutu.java</a>
+                  <a href="${project.url}/checkstyle.html#sanapeli.kayttoliittyma.Kayttoliittyma.java">sanapeli/kayttoliittyma/Kayttoliittyma.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#sanapeli.logiikka.Peliruudukko.java">sanapeli/logiikka/Peliruudukko.java</a>
                 </td>
                 <td>
                   0

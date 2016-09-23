@@ -2,15 +2,15 @@ package sanapeli.logiikka;
 
 import java.io.FileNotFoundException;
 
-public class Pelialusta implements Peliruudukko{
+public class Pelialusta implements Peliruudukko {
 
-    private Ruutu [][] ruudukko;
+    private Ruutu[][] ruudukko;
 
     public Pelialusta(int koko) {
         this.ruudukko = new Ruutu[koko][koko];
     }
-    
-     public Pelialusta() {
+
+    public Pelialusta() {
         this(7);
     }
 
@@ -18,13 +18,13 @@ public class Pelialusta implements Peliruudukko{
         lisaaAlustaanRuudut();
         lisaaAlkuMerkit();
     }
-    
+
     public void lisaaAlustaanRuudut() throws FileNotFoundException {
         for (int y = 0; y < (this.ruudukko.length); y++) {
             for (int x = 0; x < (this.ruudukko[y].length); x++) {
                 this.ruudukko[y][x] = new Ruutu(y, x);
             }
-        }   
+        }
     }
 
     public void lisaaAlkuMerkit() throws FileNotFoundException {
@@ -34,29 +34,24 @@ public class Pelialusta implements Peliruudukko{
             }
         }
     }
-    
-    public void tulostaTilanne() {
-        for (int y = 0; y < (this.ruudukko.length); y++) {
-            for (int x = 0; x < (this.ruudukko[y].length); x++) {
-                Ruutu ruutu = ruudukko[y][x];
-                
-                if (ruutu.getSisalto() == null) {
-                    System.out.print("*");
-                } else {
-                    System.out.print(ruutu.toString());
-                }
-            }
-            System.out.println("");
-        }
-    }
 
+//    public void tulostaTilanne() {
+//        for (int y = 0; y < (this.ruudukko.length); y++) {
+//            for (int x = 0; x < (this.ruudukko[y].length); x++) {
+//                Ruutu ruutu = ruudukko[y][x];
+//                
+//                if (ruutu.getSisalto() == null) {
+//                    System.out.print("*");
+//                } else {
+//                    System.out.print(ruutu.toString());
+//                }
+//            }
+//            System.out.println("");
+//        }
+//    }
     @Override
     public Ruutu[][] getRuudukko() {
         return ruudukko;
     }
-
-    
-    
-    
 
 }

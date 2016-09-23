@@ -6,3 +6,5 @@ Ruudukossa on kerrallaan vain muutama kirjain näkyvillä, joista sana tulee muo
 ###Dokumentaatio
 - [Aihemäärittely](dokumentaatio/aiheenKuvausJaRakenne.md)
 - [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
+- [Checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/BikkuMyy/Sanaruutu/blob/master/dokumentaatio/checkstyle/site/checkstyle.html)
+- [PIT-raportti](https://htmlpreview.github.io/?https://github.com/BikkuMyy/Sanaruutu/blob/master/dokumentaatio/pit/201609162244/index.html)

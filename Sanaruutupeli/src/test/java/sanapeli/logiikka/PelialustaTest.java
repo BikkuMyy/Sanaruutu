@@ -20,19 +20,19 @@ public class PelialustaTest {
     }
    
     @Test
-    public void parametritonKonstruktoriLuoTaulukonOiken(){
+    public void parametritonKonstruktoriLuoTaulukonOiken() {
         Object [][] ruudukko = pelialusta.getRuudukko();
         assertEquals(7, ruudukko.length);
     }
     
     @Test
-    public void parametrillinenKonstruktoriLuoTaulukonOiken(){
+    public void parametrillinenKonstruktoriLuoTaulukonOiken() {
         this.pelialusta = new Pelialusta(9);
         assertEquals(9, pelialusta.getRuudukko().length);
     }
     
     @Test
-    public void ruutujenLisaaminenAlustaanToimii() throws FileNotFoundException{
+    public void ruutujenLisaaminenAlustaanToimii() throws FileNotFoundException {
         pelialusta.lisaaAlustaanRuudut();
         Ruutu [][] ruudukko = pelialusta.getRuudukko();
         
@@ -45,7 +45,7 @@ public class PelialustaTest {
     }
     
     @Test
-    public void alkuMerkitLisataanOikein() throws FileNotFoundException{
+    public void alkuMerkitLisataanOikein() throws FileNotFoundException {
         pelialusta.lisaaAlustaanRuudut();
         pelialusta.lisaaAlkuMerkit();
         Ruutu [][] ruudukko = pelialusta.getRuudukko();
@@ -55,7 +55,18 @@ public class PelialustaTest {
                 assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(ruudukko[y][x].toString()));
             }
         }
+    }
+    
+    @Test
+    public void kokoAlkuTilanneLuodaanOikein() throws FileNotFoundException {
+        pelialusta.luoAlkuTilanne();
+        Ruutu [][] ruudukko = pelialusta.getRuudukko();
         
+        for (int y = (ruudukko.length / 2 - 1); y <= (ruudukko.length / 2 + 1); y++) {
+            for (int x = (ruudukko[y].length / 2 - 1); x <= (ruudukko[y].length / 2 + 1); x++) {
+                assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(ruudukko[y][x].toString()));
+            }
+        }
         
     }
     
