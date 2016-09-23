@@ -12,3 +12,4 @@ Päivä | Tunnit | Kuvaus
 21.09.2016 | 1 h | Käyttöliittymää - ActionListener
 22.09.2016 | 2 h | Käyttöliittymän rukkausta (paja)
 22.09.2016 | 1 h | Luokkakaavion ja testien päivittäminen
+23.09.2016 | 1 h | Pit- ja checkstyle -raportit

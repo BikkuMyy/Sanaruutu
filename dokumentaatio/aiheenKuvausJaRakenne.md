@@ -20,5 +20,9 @@ Peliä voisi laajentaa lisäämällä pistelaskuominaisuus, jolloin pitkistä sa
 
 ##Luokkakaavio
 
-![Luokkakaavio](/dokumentaatio/Luokkakaavio.png "Luokkakaavio")
+- Luokkakaavio, jossa logiikka- ja käyttöliittymäpakkaukset eritelty
+![PakkausLuokkakaavio](/dokumentaatio/Luokkakaavio.png "Pakkaus-luokkakaavio")
+
+- Luokkakaavio, jossa myös kytkentärajoitukset
+![Luokkakaavio](/dokumentaatio/YumlLuokkakaavio.png "YumlLuokkakaavio")
 
