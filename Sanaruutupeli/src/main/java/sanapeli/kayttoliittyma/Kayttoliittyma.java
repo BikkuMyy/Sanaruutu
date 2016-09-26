@@ -1,10 +1,10 @@
 package sanapeli.kayttoliittyma;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -16,11 +16,13 @@ public class Kayttoliittyma implements Runnable {
     private Peliruudukko ruudukko;
     private JFrame ikkuna;
     private int koko;
-    private MerkkiNappienKuuntelija kuuntelija;
+    private MerkkiNappienKuuntelija merkkiKuuntelija;
+    private ToimintoNappienKuuntelija toimintoKuuntelija; 
 
     public Kayttoliittyma(int koko, Peliruudukko ruudukko) {
         this.ruudukko = ruudukko;
-        this.kuuntelija = new MerkkiNappienKuuntelija();
+        this.merkkiKuuntelija = new MerkkiNappienKuuntelija(ruudukko);
+        this.toimintoKuuntelija = new ToimintoNappienKuuntelija(ruudukko);
         this.koko = koko;
     }
 
@@ -53,31 +55,52 @@ public class Kayttoliittyma implements Runnable {
         JTextArea sanaKentta = new JTextArea("");
         sanaKentta.setPreferredSize(new Dimension(250, 50));
         alaosa.add(sanaKentta, BorderLayout.WEST);
-        this.kuuntelija.setSanakentta(sanaKentta);
+        this.merkkiKuuntelija.setSanakentta(sanaKentta);
+        this.toimintoKuuntelija.setSanakentta(sanaKentta);
 
-        JButton hyvaksy = new JButton("Hyväksy");
-        hyvaksy.setPreferredSize(new Dimension(125, 50));
+        ToimintoNappi hyvaksy = luoToimintoNappi("Hyväksy");
         alaosa.add(hyvaksy, BorderLayout.CENTER);
 
-        JButton tyhjenna = new JButton("Tyhjennä");
-        tyhjenna.setPreferredSize(new Dimension(125, 50));
+        ToimintoNappi tyhjenna = luoToimintoNappi("Tyhjennä");
         alaosa.add(tyhjenna, BorderLayout.EAST);
 
         return alaosa;
     }
 
     private JPanel luoYlaosanKomponentit() {
-        JPanel ylaosa = new JPanel(new GridLayout(7, 7));
+        JPanel ylaosa = new JPanel(new GridLayout(koko, koko));
         ylaosa.setPreferredSize(new Dimension(500, 500));
 
         for (int i = 0; i < koko; i++) {
             for (int j = 0; j < koko; j++) {
-                Nappi nappi = new Nappi(i, j, ruudukko);
+                MerkkiNappi nappi = luoMerkkiNappi(i, j);
                 ylaosa.add(nappi);
-                nappi.addActionListener(kuuntelija);
             }
         }
         return ylaosa;
+    }
+    
+    private MerkkiNappi luoMerkkiNappi(int y, int x){
+        MerkkiNappi nappi = new MerkkiNappi(y, x, ruudukko);
+        nappi.setBackground(Color.LIGHT_GRAY);
+        nappi.addActionListener(merkkiKuuntelija);
+        
+        return nappi;
+    }
+    
+    private ToimintoNappi luoToimintoNappi(String toiminto){
+        ToimintoNappi nappi = new ToimintoNappi(toiminto, ruudukko);
+        nappi.setPreferredSize(new Dimension(125, 50));
+        
+        if (toiminto.equals("Tyhjennä")){
+            nappi.setBackground(Color.red);
+        } else {
+            nappi.setBackground(Color.green);
+        }
+        
+        nappi.addActionListener(toimintoKuuntelija);
+        
+        return nappi;
     }
 
 }

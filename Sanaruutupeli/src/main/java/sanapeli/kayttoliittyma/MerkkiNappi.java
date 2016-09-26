@@ -3,14 +3,14 @@ package sanapeli.kayttoliittyma;
 import javax.swing.JButton;
 import sanapeli.logiikka.Peliruudukko;
 
-public class Nappi extends JButton {
+public class MerkkiNappi extends JButton {
 
     private Peliruudukko ruudukko;
     private String merkki;
     private int y;
     private int x;
 
-    public Nappi(int y, int x, Peliruudukko ruudukko) {
+    public MerkkiNappi(int y, int x, Peliruudukko ruudukko) {
         this.ruudukko = ruudukko;
         this.y = y;
         this.x = x;

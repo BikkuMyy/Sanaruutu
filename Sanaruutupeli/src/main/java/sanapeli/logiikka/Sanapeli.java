@@ -20,12 +20,4 @@ public class Sanapeli {
 //        pelialusta.tulostaTilanne();
         
     }
-
-    public Pelialusta getPelialusta() {
-        return pelialusta;
-    }
-    
-    
-    
-    
 }

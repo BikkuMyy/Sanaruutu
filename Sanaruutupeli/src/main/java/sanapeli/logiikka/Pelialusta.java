@@ -1,13 +1,16 @@
 package sanapeli.logiikka;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class Pelialusta implements Peliruudukko {
 
     private Ruutu[][] ruudukko;
+    private ValitutRuudut valitut;
 
     public Pelialusta(int koko) {
         this.ruudukko = new Ruutu[koko][koko];
+        this.valitut = new ValitutRuudut();
     }
 
     public Pelialusta() {
@@ -53,5 +56,16 @@ public class Pelialusta implements Peliruudukko {
     public Ruutu[][] getRuudukko() {
         return ruudukko;
     }
+    
+    @Override
+    public Ruutu getRuutu(int y, int x){
+        return ruudukko[y][x];
+    }
+
+    @Override
+    public ArrayList<Ruutu> getValitut() {
+        return valitut.getValitut();
+    }
+
 
 }

@@ -1,11 +1,16 @@
 
 package sanapeli.logiikka;
 
+import java.util.ArrayList;
+
 
 public interface Peliruudukko {
-    //nimi vois olla kuvaavampi
     
     Ruutu [][] getRuudukko();
+    
+    Ruutu getRuutu(int y, int x);
+    
+    ArrayList<Ruutu> getValitut();
 //    Sisalto getSisalto();
     
 //    void tyhjennaRuudunSisalto();
