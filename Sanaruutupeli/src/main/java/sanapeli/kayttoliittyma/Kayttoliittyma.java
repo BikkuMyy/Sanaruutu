@@ -66,27 +66,6 @@ public class Kayttoliittyma implements Runnable {
 
         return alaosa;
     }
-
-    private JPanel luoYlaosanKomponentit() {
-        JPanel ylaosa = new JPanel(new GridLayout(koko, koko));
-        ylaosa.setPreferredSize(new Dimension(500, 500));
-
-        for (int i = 0; i < koko; i++) {
-            for (int j = 0; j < koko; j++) {
-                MerkkiNappi nappi = luoMerkkiNappi(i, j);
-                ylaosa.add(nappi);
-            }
-        }
-        return ylaosa;
-    }
-    
-    private MerkkiNappi luoMerkkiNappi(int y, int x){
-        MerkkiNappi nappi = new MerkkiNappi(y, x, ruudukko);
-        nappi.setBackground(Color.LIGHT_GRAY);
-        nappi.addActionListener(merkkiKuuntelija);
-        
-        return nappi;
-    }
     
     private ToimintoNappi luoToimintoNappi(String toiminto){
         ToimintoNappi nappi = new ToimintoNappi(toiminto, ruudukko);
@@ -101,6 +80,17 @@ public class Kayttoliittyma implements Runnable {
         nappi.addActionListener(toimintoKuuntelija);
         
         return nappi;
+    }
+    
+    private JPanel luoYlaosanKomponentit(){
+        MerkkiNappiRuudukko merkkiNappiRuudukko = new MerkkiNappiRuudukko(koko, 
+            merkkiKuuntelija, ruudukko);
+        merkkiKuuntelija.setNapit(merkkiNappiRuudukko);
+        toimintoKuuntelija.setNapit(merkkiNappiRuudukko);
+        JPanel ylaosa = merkkiNappiRuudukko.luoMerkkiNappiRuudukko();
+        ylaosa.setPreferredSize(new Dimension(500, 500));
+        
+        return ylaosa;
     }
 
 }

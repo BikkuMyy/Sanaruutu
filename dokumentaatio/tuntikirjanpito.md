@@ -13,3 +13,5 @@ Päivä | Tunnit | Kuvaus
 22.09.2016 | 2 h | Käyttöliittymän rukkausta (paja)
 22.09.2016 | 1 h | Luokkakaavion ja testien päivittäminen
 23.09.2016 | 1 h | Pit- ja checkstyle -raportit
+24.09.2016 | 2 h | Käyttöliittymää eteenpäin, valittujen nappien tallennus logiikan puolelle
+26.09.2016 | 2 h | Käyttöliittymään jatkoa - "tyhjennä"-nappi toimii
