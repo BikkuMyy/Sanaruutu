@@ -37,21 +37,7 @@ public class Pelialusta implements Peliruudukko {
             }
         }
     }
-
-//    public void tulostaTilanne() {
-//        for (int y = 0; y < (this.ruudukko.length); y++) {
-//            for (int x = 0; x < (this.ruudukko[y].length); x++) {
-//                Ruutu ruutu = ruudukko[y][x];
-//                
-//                if (ruutu.getSisalto() == null) {
-//                    System.out.print("*");
-//                } else {
-//                    System.out.print(ruutu.toString());
-//                }
-//            }
-//            System.out.println("");
-//        }
-//    }
+    
     @Override
     public Ruutu[][] getRuudukko() {
         return ruudukko;

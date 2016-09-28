@@ -10,11 +10,9 @@ import sanapeli.logiikka.Peliruudukko;
 
 public class MerkkiNappienKuuntelija implements ActionListener {
     private JTextArea sanakentta;
-    private Peliruudukko ruudukko;
     private MerkkiNappiRuudukko napit;
 
-    public MerkkiNappienKuuntelija(Peliruudukko ruudukko) {
-        this.ruudukko = ruudukko;
+    public MerkkiNappienKuuntelija() {
     }
 
     public void setSanakentta(JTextArea sanakentta) {
@@ -31,14 +29,10 @@ public class MerkkiNappienKuuntelija implements ActionListener {
             if (nappi == e.getSource()){
                 nappi.setBackground(Color.CYAN);
                 sanakentta.setText(sanakentta.getText() + nappi.getMerkki());
+                Peliruudukko ruudukko = nappi.getRuudukko();
                 ruudukko.getValitut().add(ruudukko.getRuutu(nappi.haeY(), nappi.haeX()));
             }
         }
-        
-//        MerkkiNappi nappi = (MerkkiNappi) e.getSource();
-//        nappi.setBackground(Color.CYAN);
-//        ruudukko.getValitut().add(ruudukko.getRuutu(nappi.getY(), nappi.getX()));
-//        sanakentta.setText(sanakentta.getText() + nappi.getMerkki());
         
     }
     

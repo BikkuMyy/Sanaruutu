@@ -52,12 +52,9 @@ public class Kayttoliittyma implements Runnable {
         JPanel alaosa = new JPanel(new BorderLayout());
         alaosa.setPreferredSize(new Dimension(500, 50));
 
-        JTextArea sanaKentta = new JTextArea("");
-        sanaKentta.setPreferredSize(new Dimension(250, 50));
+        JTextArea sanaKentta = luoSanakentta();
         alaosa.add(sanaKentta, BorderLayout.WEST);
-        this.merkkiKuuntelija.setSanakentta(sanaKentta);
-        this.toimintoKuuntelija.setSanakentta(sanaKentta);
-
+        
         ToimintoNappi hyvaksy = luoToimintoNappi("Hyväksy");
         alaosa.add(hyvaksy, BorderLayout.CENTER);
 
@@ -67,8 +64,17 @@ public class Kayttoliittyma implements Runnable {
         return alaosa;
     }
     
+    private JTextArea luoSanakentta(){
+        JTextArea sanaKentta = new JTextArea("");
+        sanaKentta.setPreferredSize(new Dimension(250, 50));
+        this.merkkiKuuntelija.setSanakentta(sanaKentta);
+        this.toimintoKuuntelija.setSanakentta(sanaKentta);
+        
+        return sanaKentta;
+    }
+    
     private ToimintoNappi luoToimintoNappi(String toiminto){
-        ToimintoNappi nappi = new ToimintoNappi(toiminto, ruudukko);
+        ToimintoNappi nappi = new ToimintoNappi(toiminto);
         nappi.setPreferredSize(new Dimension(125, 50));
         
         if (toiminto.equals("Tyhjennä")){

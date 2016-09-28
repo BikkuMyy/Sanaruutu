@@ -36,6 +36,12 @@ public class MerkkiNappi extends JButton {
     public int haeY() {
         return this.y;
     }
+
+    public Peliruudukko getRuudukko() {
+        return ruudukko;
+    }
+    
+    
     
     
 

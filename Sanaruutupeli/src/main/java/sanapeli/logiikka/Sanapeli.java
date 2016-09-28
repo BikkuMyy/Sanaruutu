@@ -17,7 +17,6 @@ public class Sanapeli {
         Kayttoliittyma kayttoliittyma = new Kayttoliittyma(7, pelialusta);
         SwingUtilities.invokeLater(kayttoliittyma);
         pelialusta.luoAlkuTilanne();
-//        pelialusta.tulostaTilanne();
         
     }
 }

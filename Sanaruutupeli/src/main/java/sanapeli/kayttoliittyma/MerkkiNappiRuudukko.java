@@ -14,6 +14,7 @@ public class MerkkiNappiRuudukko {
     private MerkkiNappienKuuntelija merkkiKuuntelija;
     private Peliruudukko ruudukko;
 
+    
     public MerkkiNappiRuudukko(int koko, MerkkiNappienKuuntelija kuuntelija,
             Peliruudukko ruudukko) {
         this.koko = koko;
