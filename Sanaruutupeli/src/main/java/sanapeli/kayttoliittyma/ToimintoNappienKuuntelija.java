@@ -20,8 +20,6 @@ public class ToimintoNappienKuuntelija implements ActionListener{
     public void setNapit(MerkkiNappiRuudukko napit) {
         this.napit = napit;
     }
-    
-    
 
     @Override
     public void actionPerformed(ActionEvent e) {
