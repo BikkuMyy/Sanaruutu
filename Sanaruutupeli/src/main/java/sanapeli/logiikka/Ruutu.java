@@ -2,6 +2,12 @@ package sanapeli.logiikka;
 
 import java.io.FileNotFoundException;
 
+/**
+ * Luokka sisältää yhteen ruutuun liittyvät tiedot ja metodit niiden käsittelyyn.
+ * @author mari
+ */
+
+
 public class Ruutu {
 
     private int y;

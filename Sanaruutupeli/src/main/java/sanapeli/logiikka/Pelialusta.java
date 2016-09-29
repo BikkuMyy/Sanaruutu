@@ -3,6 +3,11 @@ package sanapeli.logiikka;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
+/**
+ * Luokka edustaa taulukkomuotoista pelialustaa, johon voi tallentaa Ruutu-olioita.
+ * @author mari
+ */
+
 public class Pelialusta implements Peliruudukko {
 
     private Ruutu[][] ruudukko;

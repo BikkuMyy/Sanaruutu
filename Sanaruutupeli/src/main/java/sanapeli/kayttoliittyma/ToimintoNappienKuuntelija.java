@@ -1,4 +1,3 @@
-
 package sanapeli.kayttoliittyma;
 
 import java.awt.Color;
@@ -8,8 +7,14 @@ import javax.swing.JTextArea;
 import sanapeli.logiikka.Peliruudukko;
 import sanapeli.logiikka.Ruutu;
 
-public class ToimintoNappienKuuntelija implements ActionListener{
-    private  JTextArea sanakentta;
+/**
+ * Luokka vastaa ToimintoNappi-olioiden tapahtumienkäsittelystä.
+ *
+ * @author mari
+ */
+public class ToimintoNappienKuuntelija implements ActionListener {
+
+    private JTextArea sanakentta;
     private Peliruudukko ruudukko;
     private MerkkiNappiRuudukko napit;
 
@@ -24,22 +29,31 @@ public class ToimintoNappienKuuntelija implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         ToimintoNappi nappi = (ToimintoNappi) e.getSource();
-        if (nappi.getToiminto().equals("Tyhjennä")){
-            for (Ruutu ruutu : ruudukko.getValitut()){
+        
+        if (nappi.getToiminto().equals("Tyhjennä")) {
+            for (Ruutu ruutu : ruudukko.getValitut()) {
+                
+                napit.haeMerkkiNappi(ruutu.getY(), ruutu.getX()).setEnabled(true);
                 napit.haeMerkkiNappi(ruutu.getY(), ruutu.getX()).setBackground(Color.LIGHT_GRAY);
             }
+            
         }
-        //hyväksy-napin toiminto tähän
+        //ei toimi vileä kunnolla    
+        if (nappi.getToiminto().equals("Hyväksy")) {
+            for (Ruutu ruutu : ruudukko.getValitut()) {
+                System.out.println(ruutu.toString());
+                napit.poistaMerkkiNappi(ruutu.getY(), ruutu.getX());
+            }
+
+        }
         this.sanakentta.setText("");
+        ruudukko.getValitut().clear();
+
     }
 
     public void setSanakentta(JTextArea sanakentta) {
         this.sanakentta = sanakentta;
-        
+
     }
-    
-    
-    
-    
-    
+
 }

@@ -4,12 +4,16 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
 import sanapeli.logiikka.Peliruudukko;
+
+/**
+ * Luokka vastaa ohjelman graafisen käyttöliittymän luomisesta ja ylläpidosta.
+ * @author mari
+ */
 
 public class Kayttoliittyma implements Runnable {
 
@@ -21,7 +25,7 @@ public class Kayttoliittyma implements Runnable {
 
     public Kayttoliittyma(int koko, Peliruudukko ruudukko) {
         this.ruudukko = ruudukko;
-        this.merkkiKuuntelija = new MerkkiNappienKuuntelija(ruudukko);
+        this.merkkiKuuntelija = new MerkkiNappienKuuntelija();
         this.toimintoKuuntelija = new ToimintoNappienKuuntelija(ruudukko);
         this.koko = koko;
     }

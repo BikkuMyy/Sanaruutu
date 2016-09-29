@@ -3,6 +3,10 @@ package sanapeli.logiikka;
 
 import java.util.ArrayList;
 
+/**
+ * Rajapinta sovelluslogiikan ja kayttöliittymän välillä.
+ * @author mari
+ */
 
 public interface Peliruudukko {
     
@@ -11,8 +15,5 @@ public interface Peliruudukko {
     Ruutu getRuutu(int y, int x);
     
     ArrayList<Ruutu> getValitut();
-//    Sisalto getSisalto();
-    
-//    void tyhjennaRuudunSisalto();
 
 }

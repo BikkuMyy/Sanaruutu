@@ -8,6 +8,11 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Collections;
 
+/**
+ * Luokka lukee tiedoston listaksi merkkijonoja.
+ * @author mari
+ */
+
 public class Randomizer {
 
     private File tiedosto;

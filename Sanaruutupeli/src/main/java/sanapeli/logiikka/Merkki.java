@@ -3,6 +3,11 @@ package sanapeli.logiikka;
 
 import java.io.FileNotFoundException;
 
+/**
+ * Luokka tallentaa tiedon ruudun sisältämästä merkistä.
+ *
+ * @author mari
+ */
 
 public class Merkki extends Sisalto {
     private String merkki;
@@ -15,11 +20,6 @@ public class Merkki extends Sisalto {
 //    public int getPisteet() {
 //        return pisteet;
 //    }
-
-    @Override
-    public String getSisalto() {
-        return merkki;
-    }
 
     @Override
     public String toString() {

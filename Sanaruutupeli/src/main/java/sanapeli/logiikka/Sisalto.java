@@ -3,6 +3,11 @@ package sanapeli.logiikka;
 
 import java.io.FileNotFoundException;
 
+/**
+ * Abstrakti luokka, joka määrittelee alaluokkiensa pakolliset toiminnot.
+ * @author mari
+ */
+
 public abstract class Sisalto {
     
     public Randomizer randomizer;
@@ -10,8 +15,6 @@ public abstract class Sisalto {
     public Sisalto() throws FileNotFoundException {
         this.randomizer = new Randomizer("kirjaimet.txt");
     }
-    
-    public abstract String getSisalto();
     
     // public abstract int getPisteet();
 

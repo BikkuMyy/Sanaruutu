@@ -19,7 +19,7 @@ public class MerkkiTest {
 
     @Test
     public void konstruktoriAsettaaOikeanSisallonMerkille() {
-        assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(merkki.getSisalto()));
+        assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(merkki.toString()));
     }
 
     @Test

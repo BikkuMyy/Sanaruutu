@@ -14,7 +14,7 @@ public class Sanapeli {
     }
     
     public void kaynnista() throws FileNotFoundException {
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(7, pelialusta);
+        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(pelialusta);
         SwingUtilities.invokeLater(kayttoliittyma);
         pelialusta.luoAlkuTilanne();
         

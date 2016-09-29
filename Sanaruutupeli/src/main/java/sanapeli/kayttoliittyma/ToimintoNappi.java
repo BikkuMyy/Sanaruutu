@@ -3,6 +3,10 @@ package sanapeli.kayttoliittyma;
 
 import javax.swing.JButton;
 
+/**
+ * Luokka sisältää nappinsa toiminnon.
+ * @author mari
+ */
 
 public class ToimintoNappi extends JButton{
     private String toiminto;

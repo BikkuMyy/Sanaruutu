@@ -7,6 +7,11 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 import sanapeli.logiikka.Peliruudukko;
 
+/**
+ * Luokka luo ja säilyttää MerkkiNappi-olioita ja niiden koordinaatteja.
+ * @author mari
+ */
+
 
 public class MerkkiNappiRuudukko {
     private int koko;
@@ -47,6 +52,15 @@ public class MerkkiNappiRuudukko {
     public MerkkiNappi haeMerkkiNappi(int y, int x){
         int indeksi = y * koko + x;
         return napit.get(indeksi);
+    }
+    
+    public void poistaMerkkiNappi(int y, int x){
+        MerkkiNappi nappi = haeMerkkiNappi(y, x);
+        nappi.setText("");
+        nappi.setBackground(Color.MAGENTA);
+        nappi.setEnabled(false);
+        ruudukko.getRuutu(y, x).tyhjennaRuudunSisalto();
+        napit.remove(nappi);
     }
 
     public ArrayList<MerkkiNappi> getNapit() {

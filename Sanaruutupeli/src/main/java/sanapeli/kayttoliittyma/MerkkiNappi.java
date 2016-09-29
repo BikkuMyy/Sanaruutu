@@ -3,6 +3,11 @@ package sanapeli.kayttoliittyma;
 import javax.swing.JButton;
 import sanapeli.logiikka.Peliruudukko;
 
+/**
+ * Luokka sisältää yhteen nappiin liittyvät tiedot ja metodit niiden käsittelemiseen.
+ * @author mari
+ */
+
 public class MerkkiNappi extends JButton {
 
     private Peliruudukko ruudukko;
@@ -22,9 +27,12 @@ public class MerkkiNappi extends JButton {
         return this.merkki;
     }
 
+    public void setMerkki() {
+        this.merkki = haeNappiinMerkkiRuudusta();
+    }
+
     private String haeNappiinMerkkiRuudusta() {
         return ruudukko.getRuudukko()[y][x].toString();
-
     }
 
    
