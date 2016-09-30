@@ -17,4 +17,4 @@ Päivä | Tunnit | Kuvaus
 26.09.2016 | 2 h | Käyttöliittymään jatkoa - "tyhjennä"-nappi toimii
 28.09.2016 | 2 h | Luokkakaavion päivitys, käyttöliittymän rakenteen läpikäynti
 29.09.2016 | 2 h | JavaDoc luokille, "hyväksy"-napin toimintojen ohjelmointia
-
+30.09.2016	| 2 h | JavaDoc:ia metodeille, testien päivitystä, chechkstyle ja pit -raportit

@@ -7,4 +7,4 @@ Ruudukossa on kerrallaan vain muutama kirjain näkyvillä, joista sana tulee muo
 - [Aihemäärittely](dokumentaatio/aiheenKuvausJaRakenne.md)
 - [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
 - [Checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/BikkuMyy/Sanaruutu/blob/master/dokumentaatio/checkstyle/site/checkstyle.html)
-- [PIT-raportti](https://htmlpreview.github.io/?https://github.com/BikkuMyy/Sanaruutu/blob/master/dokumentaatio/pit/201609231252/index.html)
+- [PIT-raportti](https://htmlpreview.github.io/?https://github.com/BikkuMyy/Sanaruutu/blob/master/dokumentaatio/pit/201609301851/index.html)
