@@ -34,13 +34,21 @@ public class MerkkiNappi extends JButton {
     private String haeNappiinMerkkiRuudusta() {
         return ruudukko.getRuudukko()[y][x].toString();
     }
-
-   
+    
+    /**
+     * Metodi palauttaa napin x-koordinaatin
+     * 
+     * @return MerkkiNappi-olion x
+     */
     public int haeX() {
         return this.x;
     }
-
     
+    /**
+     * Metodi palauttaa napin y-koordinaatin
+     * 
+     * @return MerkkiNappi-olion y
+     */
     public int haeY() {
         return this.y;
     }

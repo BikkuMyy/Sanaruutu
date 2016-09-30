@@ -1,4 +1,3 @@
-
 package sanapeli.kayttoliittyma;
 
 import java.awt.Color;
@@ -9,11 +8,10 @@ import sanapeli.logiikka.Peliruudukko;
 
 /**
  * Luokka vastaa MerkkiNappi-olioiden tapahtumienkäsittelystä.
- * @author mari
+ *
  */
-
-
 public class MerkkiNappienKuuntelija implements ActionListener {
+
     private JTextArea sanakentta;
     private MerkkiNappiRuudukko napit;
 
@@ -27,11 +25,11 @@ public class MerkkiNappienKuuntelija implements ActionListener {
     public void setNapit(MerkkiNappiRuudukko napit) {
         this.napit = napit;
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        for (MerkkiNappi nappi : napit.getNapit()){
-            if (nappi == e.getSource()){
+        for (MerkkiNappi nappi : napit.getNapit()) {
+            if (nappi == e.getSource()) {
                 nappi.setBackground(Color.CYAN);
                 nappi.setEnabled(false);
                 sanakentta.setText(sanakentta.getText() + nappi.getMerkki());
@@ -39,7 +37,7 @@ public class MerkkiNappienKuuntelija implements ActionListener {
                 ruudukko.getValitut().add(ruudukko.getRuutu(nappi.haeY(), nappi.haeX()));
             }
         }
-        
+
     }
-    
+
 }

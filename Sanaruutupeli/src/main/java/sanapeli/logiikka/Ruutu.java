@@ -1,7 +1,5 @@
 package sanapeli.logiikka;
 
-import java.io.FileNotFoundException;
-
 /**
  * Luokka sisältää yhteen ruutuun liittyvät tiedot ja metodit niiden käsittelyyn.
  * @author mari
@@ -18,10 +16,17 @@ public class Ruutu {
         this.y = y;
         this.x = x;
     }
-
-    public void lisaaRuutuunSisalto() throws FileNotFoundException {
+    
+    /**
+     * Metodi lisää uuden Merkki-olion sisalto-attribuuttiin.
+     */
+    public void lisaaRuutuunSisalto() {
         this.sisalto = new Merkki();
     }
+    
+    /**
+     * Metodi muuttaa sisalto-atribuutin arvoksi null.
+     */
 
     public void tyhjennaRuudunSisalto() {
         this.sisalto = null;

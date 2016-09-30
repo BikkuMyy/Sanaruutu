@@ -1,4 +1,3 @@
-
 package sanapeli.kayttoliittyma;
 
 import java.awt.Color;
@@ -9,17 +8,15 @@ import sanapeli.logiikka.Peliruudukko;
 
 /**
  * Luokka luo ja säilyttää MerkkiNappi-olioita ja niiden koordinaatteja.
- * @author mari
+ * 
  */
-
-
 public class MerkkiNappiRuudukko {
+
     private int koko;
     private ArrayList<MerkkiNappi> napit;
     private MerkkiNappienKuuntelija merkkiKuuntelija;
     private Peliruudukko ruudukko;
 
-    
     public MerkkiNappiRuudukko(int koko, MerkkiNappienKuuntelija kuuntelija,
             Peliruudukko ruudukko) {
         this.koko = koko;
@@ -27,34 +24,53 @@ public class MerkkiNappiRuudukko {
         this.merkkiKuuntelija = kuuntelija;
         this.ruudukko = ruudukko;
     }
-    
-    public JPanel luoMerkkiNappiRuudukko(){
+
+    /**
+     * Metodi luo MerkkiNappiRuudukon, joka sisältää MerkkiNappi-olioita.
+     *
+     * @return MerkkiNappiRuudukko
+     */
+    public JPanel luoMerkkiNappiRuudukko() {
         JPanel merkkiRuudukko = new JPanel(new GridLayout(koko, koko));
-        for (int i = 0; i < koko; i++) {
-            for (int j = 0; j < koko; j++) {
-                MerkkiNappi nappi = luoMerkkiNappi(i, j);
+        for (int y = 0; y < koko; y++) {
+            for (int x = 0; x < koko; x++) {
+                MerkkiNappi nappi = luoMerkkiNappi(y, x);
                 napit.add(nappi);
                 merkkiRuudukko.add(nappi);
             }
         }
-        
+
         return merkkiRuudukko;
     }
-    
-    private MerkkiNappi luoMerkkiNappi(int y, int x){
+
+    private MerkkiNappi luoMerkkiNappi(int y, int x) {
         MerkkiNappi nappi = new MerkkiNappi(y, x, ruudukko);
         nappi.setBackground(Color.LIGHT_GRAY);
         nappi.addActionListener(merkkiKuuntelija);
-        
+
         return nappi;
     }
-    
-    public MerkkiNappi haeMerkkiNappi(int y, int x){
+
+    /**
+     * Metodi palauttaa y- ja x-koordinaatteja vastaavan MerkkiNappi-olion.
+     *
+     * @param y
+     * @param x
+     *
+     * @return MerkkiNappi sijainnissa y, x
+     */
+    public MerkkiNappi haeMerkkiNappi(int y, int x) {
         int indeksi = y * koko + x;
         return napit.get(indeksi);
     }
-    
-    public void poistaMerkkiNappi(int y, int x){
+
+    /**
+     * Metodi poistaa y- ja x-koordinaatteja vastaavan MerkkiNappi-olion.
+     *
+     * @param y
+     * @param x
+     */
+    public void poistaMerkkiNappi(int y, int x) {
         MerkkiNappi nappi = haeMerkkiNappi(y, x);
         nappi.setText("");
         nappi.setBackground(Color.MAGENTA);
@@ -66,7 +82,5 @@ public class MerkkiNappiRuudukko {
     public ArrayList<MerkkiNappi> getNapit() {
         return napit;
     }
-   
-    
-    
+
 }

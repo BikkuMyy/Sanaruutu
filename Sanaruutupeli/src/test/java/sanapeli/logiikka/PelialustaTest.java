@@ -10,6 +10,7 @@ import org.junit.Before;
 public class PelialustaTest {
     
     private Pelialusta pelialusta;
+    private Ruutu[][] ruudukko;
     
     public PelialustaTest() {
     }
@@ -17,11 +18,11 @@ public class PelialustaTest {
     @Before
     public void setUp (){
         this.pelialusta = new Pelialusta();
+        this.ruudukko = pelialusta.getRuudukko();
     }
    
     @Test
     public void parametritonKonstruktoriLuoTaulukonOiken() {
-        Object [][] ruudukko = pelialusta.getRuudukko();
         assertEquals(7, ruudukko.length);
     }
     
@@ -34,7 +35,6 @@ public class PelialustaTest {
     @Test
     public void ruutujenLisaaminenAlustaanToimii() throws FileNotFoundException {
         pelialusta.lisaaAlustaanRuudut();
-        Ruutu [][] ruudukko = pelialusta.getRuudukko();
         
         for (int y = 0; y < ruudukko.length; y++) {
             for (int x = 0; x < ruudukko[y].length; x++) {
@@ -48,7 +48,6 @@ public class PelialustaTest {
     public void alkuMerkitLisataanOikein() throws FileNotFoundException {
         pelialusta.lisaaAlustaanRuudut();
         pelialusta.lisaaAlkuMerkit();
-        Ruutu [][] ruudukko = pelialusta.getRuudukko();
         
         for (int y = (ruudukko.length / 2 - 1); y <= (ruudukko.length / 2 + 1); y++) {
             for (int x = (ruudukko[y].length / 2 - 1); x <= (ruudukko[y].length / 2 + 1); x++) {
@@ -60,7 +59,6 @@ public class PelialustaTest {
     @Test
     public void kokoAlkuTilanneLuodaanOikein() throws FileNotFoundException {
         pelialusta.luoAlkuTilanne();
-        Ruutu [][] ruudukko = pelialusta.getRuudukko();
         
         for (int y = (ruudukko.length / 2 - 1); y <= (ruudukko.length / 2 + 1); y++) {
             for (int x = (ruudukko[y].length / 2 - 1); x <= (ruudukko[y].length / 2 + 1); x++) {
@@ -68,6 +66,11 @@ public class PelialustaTest {
             }
         }
         
+    }
+    
+    @Test
+    public void ruudunHakuKoordinaateillaToimii(){
+        assertEquals(ruudukko[1][1], pelialusta.getRuutu(1, 1));
     }
     
     

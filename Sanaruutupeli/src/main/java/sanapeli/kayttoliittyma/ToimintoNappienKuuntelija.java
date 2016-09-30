@@ -29,6 +29,7 @@ public class ToimintoNappienKuuntelija implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         ToimintoNappi nappi = (ToimintoNappi) e.getSource();
+        //molempien toiminnoista omat metodit
         
         if (nappi.getToiminto().equals("Tyhjennä")) {
             for (Ruutu ruutu : ruudukko.getValitut()) {

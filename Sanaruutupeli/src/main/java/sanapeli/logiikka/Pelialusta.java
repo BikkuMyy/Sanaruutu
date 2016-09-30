@@ -1,13 +1,12 @@
 package sanapeli.logiikka;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 /**
- * Luokka edustaa taulukkomuotoista pelialustaa, johon voi tallentaa Ruutu-olioita.
- * @author mari
+ * Luokka edustaa taulukkomuotoista pelialustaa, johon voi tallentaa
+ * Ruutu-olioita.
+ *
  */
-
 public class Pelialusta implements Peliruudukko {
 
     private Ruutu[][] ruudukko;
@@ -22,12 +21,21 @@ public class Pelialusta implements Peliruudukko {
         this(7);
     }
 
-    public void luoAlkuTilanne() throws FileNotFoundException {
+    /**
+     * Metodi luo pelin alkutilanteen, jossa pelialustan keskellä on 9 merkkiä
+     * näkyvissä.
+     *
+     */
+    public void luoAlkuTilanne() {
         lisaaAlustaanRuudut();
         lisaaAlkuMerkit();
     }
 
-    public void lisaaAlustaanRuudut() throws FileNotFoundException {
+    /**
+     * Metodi lisää pelialustan taulukon kuhunkin sijaintiin Ruutu-olion.
+     *
+     */
+    public void lisaaAlustaanRuudut() {
         for (int y = 0; y < (this.ruudukko.length); y++) {
             for (int x = 0; x < (this.ruudukko[y].length); x++) {
                 this.ruudukko[y][x] = new Ruutu(y, x);
@@ -35,21 +43,26 @@ public class Pelialusta implements Peliruudukko {
         }
     }
 
-    public void lisaaAlkuMerkit() throws FileNotFoundException {
+    /**
+     * Metodi lisää pelialustan taulukon keskustan Ruutu-olioihin Merkki-olion.
+     *
+     */
+    public void lisaaAlkuMerkit() {
         for (int y = (ruudukko.length / 2 - 1); y <= (this.ruudukko.length / 2 + 1); y++) {
             for (int x = (this.ruudukko[y].length / 2 - 1); x <= (this.ruudukko[y].length / 2 + 1); x++) {
                 ruudukko[y][x].lisaaRuutuunSisalto();
             }
         }
     }
-    
+
+    //metodi, joka pävittää tilanteen kun merkkejä on käytetty
     @Override
     public Ruutu[][] getRuudukko() {
         return ruudukko;
     }
-    
+
     @Override
-    public Ruutu getRuutu(int y, int x){
+    public Ruutu getRuutu(int y, int x) {
         return ruudukko[y][x];
     }
 
@@ -57,6 +70,5 @@ public class Pelialusta implements Peliruudukko {
     public ArrayList<Ruutu> getValitut() {
         return valitut.getValitut();
     }
-
 
 }

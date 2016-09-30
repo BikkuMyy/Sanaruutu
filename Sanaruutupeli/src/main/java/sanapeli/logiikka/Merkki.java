@@ -1,8 +1,6 @@
 
 package sanapeli.logiikka;
 
-import java.io.FileNotFoundException;
-
 /**
  * Luokka tallentaa tiedon ruudun sisältämästä merkistä.
  *
@@ -13,7 +11,7 @@ public class Merkki extends Sisalto {
     private String merkki;
 //    private int pisteet;
 
-    public Merkki() throws FileNotFoundException {
+    public Merkki() {
         this.merkki = super.randomizer.satunnainenMerkki();
     }
 
