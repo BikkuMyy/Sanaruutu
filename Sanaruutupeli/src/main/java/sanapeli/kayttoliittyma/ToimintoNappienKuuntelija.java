@@ -59,8 +59,11 @@ public class ToimintoNappienKuuntelija implements ActionListener {
     
     public void paivitaNapit(){
         ruudukko.paivitaRuudukko();
+        
         for (MerkkiNappi nappi : napit.getNapit()){
-            nappi.setMerkki();
+            if(nappi.getMerkki().isEmpty()){
+                nappi.setMerkki();
+            }
         }
     }
 

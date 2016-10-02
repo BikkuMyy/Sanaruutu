@@ -19,7 +19,7 @@ public class MerkkiNappi extends JButton {
         this.ruudukko = ruudukko;
         this.y = y;
         this.x = x;
-        super.setText(this.merkki = haeNappiinMerkkiRuudusta());
+        setMerkki();
     }
 
     public String getMerkki() {
@@ -27,7 +27,7 @@ public class MerkkiNappi extends JButton {
     }
 
     public void setMerkki() {
-        this.merkki = haeNappiinMerkkiRuudusta();
+        super.setText(this.merkki = haeNappiinMerkkiRuudusta());
     }
 
     private String haeNappiinMerkkiRuudusta() {
@@ -35,18 +35,18 @@ public class MerkkiNappi extends JButton {
     }
     
     /**
-     * Metodi palauttaa napin x-koordinaatin
+     * Metodi palauttaa napin x-koordinaatin.
      * 
-     * @return MerkkiNappi-olion x
+     * @return MerkkiNappi-olio x
      */
     public int haeX() {
         return this.x;
     }
     
     /**
-     * Metodi palauttaa napin y-koordinaatin
+     * Metodi palauttaa napin y-koordinaatin.
      * 
-     * @return MerkkiNappi-olion y
+     * @return MerkkiNappi-olio y
      */
     public int haeY() {
         return this.y;

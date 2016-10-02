@@ -55,7 +55,6 @@ public class Pelialusta implements Peliruudukko {
         }
     }
 
-    //metodi, joka pävittää tilanteen kun merkkejä on käytetty
     @Override
     public void paivitaRuudukko() {
         for (Ruutu ruutu : this.valitut.getValitut()) {
@@ -63,23 +62,22 @@ public class Pelialusta implements Peliruudukko {
             int x = ruutu.getX();
 
             //yläpuolella
-            if (getRuutu(y - 1, x).getSisalto() == null) {
+            if (y - 1 >= 0 && getRuutu(y - 1, x).getSisalto() == null) {
                 ruudukko[y - 1][x].lisaaRuutuunSisalto();
             }
             //oikealla
-            if (getRuutu(y, x + 1).getSisalto() == null) {
+            if (x + 1 < ruudukko.length && getRuutu(y, x + 1).getSisalto() == null) {
                 ruudukko[y][x + 1].lisaaRuutuunSisalto();
             }
             //alapuolella
-            if (getRuutu(y + 1, x).getSisalto() == null) {
+            if (y + 1 < ruudukko.length && getRuutu(y + 1, x).getSisalto() == null) {
                 ruudukko[y + 1][x].lisaaRuutuunSisalto();
             }
             //vasemmalla
-            if (getRuutu(y, x - 1).getSisalto() == null) {
+            if (x - 1 >= 0 && getRuutu(y, x - 1).getSisalto() == null) {
                 ruudukko[y][x - 1].lisaaRuutuunSisalto();
             }
         }
-        tulostaTilanne();
     }
 
     @Override
@@ -95,21 +93,6 @@ public class Pelialusta implements Peliruudukko {
     @Override
     public ArrayList<Ruutu> getValitut() {
         return valitut.getValitut();
-    }
-
-    public void tulostaTilanne() {
-        for (int y = 0; y < (this.ruudukko.length); y++) {
-            for (int x = 0; x < (this.ruudukko[y].length); x++) {
-                Ruutu ruutu = ruudukko[y][x];
-
-                if (ruutu.getSisalto() == null) {
-                    System.out.print("*");
-                } else {
-                    System.out.print(ruutu.toString());
-                }
-            }
-            System.out.println("");
-        }
     }
 
 }
