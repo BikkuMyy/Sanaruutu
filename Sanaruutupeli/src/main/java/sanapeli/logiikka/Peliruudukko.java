@@ -15,5 +15,7 @@ public interface Peliruudukko {
     Ruutu getRuutu(int y, int x);
     
     ArrayList<Ruutu> getValitut();
+    
+    void paivitaRuudukko();
 
 }

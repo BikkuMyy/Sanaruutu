@@ -20,7 +20,6 @@ public class MerkkiNappi extends JButton {
         this.y = y;
         this.x = x;
         super.setText(this.merkki = haeNappiinMerkkiRuudusta());
-
     }
 
     public String getMerkki() {

@@ -23,14 +23,6 @@ public class Ruutu {
     public void lisaaRuutuunSisalto() {
         this.sisalto = new Merkki();
     }
-    
-    /**
-     * Metodi muuttaa sisalto-atribuutin arvoksi null.
-     */
-
-    public void tyhjennaRuudunSisalto() {
-        this.sisalto = null;
-    }
 
     public int getY() {
         return y;

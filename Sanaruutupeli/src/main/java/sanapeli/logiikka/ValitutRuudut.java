@@ -19,4 +19,9 @@ public class ValitutRuudut {
         return valitut;
     }
 
+    @Override
+    public String toString() {
+        return valitut.toString();
+    }
+    
 }

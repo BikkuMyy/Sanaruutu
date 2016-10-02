@@ -64,21 +64,6 @@ public class MerkkiNappiRuudukko {
         return napit.get(indeksi);
     }
 
-    /**
-     * Metodi poistaa y- ja x-koordinaatteja vastaavan MerkkiNappi-olion.
-     *
-     * @param y
-     * @param x
-     */
-    public void poistaMerkkiNappi(int y, int x) {
-        MerkkiNappi nappi = haeMerkkiNappi(y, x);
-        nappi.setText("");
-        nappi.setBackground(Color.MAGENTA);
-        nappi.setEnabled(false);
-        ruudukko.getRuutu(y, x).tyhjennaRuudunSisalto();
-        napit.remove(nappi);
-    }
-
     public ArrayList<MerkkiNappi> getNapit() {
         return napit;
     }

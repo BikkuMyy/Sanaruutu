@@ -87,6 +87,7 @@ public class Kayttoliittyma implements Runnable {
     private JPanel luoYlaosanKomponentit() {
         MerkkiNappiRuudukko merkkiNappiRuudukko = new MerkkiNappiRuudukko(koko,
                 merkkiKuuntelija, ruudukko);
+        
         merkkiKuuntelija.setNapit(merkkiNappiRuudukko);
         toimintoKuuntelija.setNapit(merkkiNappiRuudukko);
         JPanel ylaosa = merkkiNappiRuudukko.luoMerkkiNappiRuudukko();

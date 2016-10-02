@@ -22,39 +22,55 @@ public class ToimintoNappienKuuntelija implements ActionListener {
         this.ruudukko = ruudukko;
     }
 
-    public void setNapit(MerkkiNappiRuudukko napit) {
-        this.napit = napit;
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
-        ToimintoNappi nappi = (ToimintoNappi) e.getSource();
-        //molempien toiminnoista omat metodit
-        
-        if (nappi.getToiminto().equals("Tyhjennä")) {
-            for (Ruutu ruutu : ruudukko.getValitut()) {
-                
-                napit.haeMerkkiNappi(ruutu.getY(), ruutu.getX()).setEnabled(true);
-                napit.haeMerkkiNappi(ruutu.getY(), ruutu.getX()).setBackground(Color.LIGHT_GRAY);
-            }
-            
-        }
-        //ei toimi vileä kunnolla    
-        if (nappi.getToiminto().equals("Hyväksy")) {
-            for (Ruutu ruutu : ruudukko.getValitut()) {
-                System.out.println(ruutu.toString());
-                napit.poistaMerkkiNappi(ruutu.getY(), ruutu.getX());
-            }
+        ToimintoNappi toiminto = (ToimintoNappi) e.getSource();
 
+        if (toiminto.getToiminto().equals("Tyhjennä")) {
+            tyhjenna();
         }
+
+        if (toiminto.getToiminto().equals("Hyväksy")) {
+            hyvaksy();
+        }
+
         this.sanakentta.setText("");
         ruudukko.getValitut().clear();
 
     }
 
+    public void tyhjenna() {
+        for (Ruutu ruutu : ruudukko.getValitut()) {
+            MerkkiNappi nappi = napit.haeMerkkiNappi(ruutu.getY(), ruutu.getX());
+            nappi.setEnabled(true);
+            nappi.setBackground(Color.LIGHT_GRAY);
+        }
+    }
+
+    public void hyvaksy() {
+        for (Ruutu ruutu : ruudukko.getValitut()) {
+            MerkkiNappi nappi = napit.haeMerkkiNappi(ruutu.getY(), ruutu.getX());
+            nappi.setText("");
+            nappi.setBackground(Color.MAGENTA);
+            nappi.setEnabled(false);
+        }
+        paivitaNapit();
+    }
+    
+    public void paivitaNapit(){
+        ruudukko.paivitaRuudukko();
+        for (MerkkiNappi nappi : napit.getNapit()){
+            nappi.setMerkki();
+        }
+    }
+
     public void setSanakentta(JTextArea sanakentta) {
         this.sanakentta = sanakentta;
 
+    }
+
+    public void setNapit(MerkkiNappiRuudukko napit) {
+        this.napit = napit;
     }
 
 }
