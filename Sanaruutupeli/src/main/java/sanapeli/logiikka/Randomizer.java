@@ -10,7 +10,6 @@ import java.util.Collections;
 /**
  * Luokka lukee saamansa tiedoston listaksi merkkijonoja.
  *
- * @author mari
  */
 public class Randomizer {
 
@@ -32,7 +31,7 @@ public class Randomizer {
         Scanner lukija = null;
 
         try {
-            lukija = new Scanner(tiedosto);
+            lukija = new Scanner(tiedosto, "UTF-8");
         } catch (Exception e) {
             System.out.println("Tiedoston lukeminen epäonnistui. Virhe: " + e.getMessage());
             return;

@@ -19,3 +19,5 @@ Päivä | Tunnit | Kuvaus
 29.09.2016 | 2 h | JavaDoc luokille, "hyväksy"-napin toimintojen ohjelmointia
 30.09.2016	| 2 h | JavaDoc:ia metodeille, testien päivitystä, chechkstyle ja pit -raportit
 02.10.2016 | 1 h | "Hyväksy" -nappi toimii, uusien merkkien lisäyksen ohjelmointia
+05.10.2016 | 1 h | Sekvenssikaavio käyttötapaukselle, jossa pelaaja klikkaa merkkinappia
+06.10.2016 | 3 h | Sekvenssikaavio molemmille toimintonapeille, peliin sanan tarkistus sanalistalta

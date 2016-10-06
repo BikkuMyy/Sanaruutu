@@ -24,20 +24,6 @@ public class RuutuTest {
     }
     
     @Test
-    public void ruudunTyhjennysPoistaaSisallon(){
-        this.ruutu.tyhjennaRuudunSisalto();
-        assertEquals(null, this.ruutu.getSisalto());
-    
-    }
-    
-    @Test
-    public void ruudunTyhjennysEiPoistaSijaintia(){
-        this.ruutu.tyhjennaRuudunSisalto();
-        assertEquals(2, this.ruutu.getX());
-        assertEquals(1, this.ruutu.getY());
-    }
-    
-    @Test
     public void tulostusToimiiOikein(){
         assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(this.ruutu.toString()));
     }

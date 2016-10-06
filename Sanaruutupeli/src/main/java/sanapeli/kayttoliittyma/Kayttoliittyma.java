@@ -127,6 +127,8 @@ public class Kayttoliittyma implements Runnable {
             nappi.setBackground(Color.red);
         } else {
             nappi.setBackground(Color.green);
+            //nappi.setEnabled(false);
+            //kunhan sanan tarkistus toimii, hyväksy-nappi voi olla niin pitkään disabled, että sana on järkevä
         }
 
         nappi.addActionListener(toimintoKuuntelija);

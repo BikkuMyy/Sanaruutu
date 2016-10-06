@@ -16,6 +16,8 @@ public interface Peliruudukko {
     
     ArrayList<Ruutu> getValitut();
     
+    boolean tarkistaSana(String sana);
+    
     void paivitaRuudukko();
 
 }

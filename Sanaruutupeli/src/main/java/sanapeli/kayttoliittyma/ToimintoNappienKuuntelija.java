@@ -10,7 +10,6 @@ import sanapeli.logiikka.Ruutu;
 /**
  * Luokka vastaa ToimintoNappi-olioiden tapahtumienkäsittelystä.
  *
- * @author mari
  */
 public class ToimintoNappienKuuntelija implements ActionListener {
 
@@ -33,7 +32,8 @@ public class ToimintoNappienKuuntelija implements ActionListener {
         if (toiminto.getToiminto().equals("Hyväksy")) {
             hyvaksy();
         }
-
+        
+        //sanakentta.setBackground(Color.WHITE);
         this.sanakentta.setText("");
         ruudukko.getValitut().clear();
 
@@ -48,20 +48,28 @@ public class ToimintoNappienKuuntelija implements ActionListener {
     }
 
     public void hyvaksy() {
-        for (Ruutu ruutu : ruudukko.getValitut()) {
-            MerkkiNappi nappi = napit.haeMerkkiNappi(ruutu.getY(), ruutu.getX());
-            nappi.setText("");
-            nappi.setBackground(Color.MAGENTA);
-            nappi.setEnabled(false);
+        if (ruudukko.tarkistaSana(sanakentta.getText())) {
+            //sanakentta.setBackground(Color.GREEN);
+            for (Ruutu ruutu : ruudukko.getValitut()) {
+                MerkkiNappi nappi = napit.haeMerkkiNappi(ruutu.getY(), ruutu.getX());
+                nappi.hyvaksy();
+            }
+            paivitaNapit();
+            
+        } else {
+            // tapahtuu liian nopeasti, värinmuutosta ja tekstiä ei ehi nähä
+//            sanakentta.setBackground(Color.RED);
+//           this.sanakentta.setText("Ei ole sana!");
+            tyhjenna();
         }
-        paivitaNapit();
+
     }
-    
-    public void paivitaNapit(){
+
+    public void paivitaNapit() {
         ruudukko.paivitaRuudukko();
-        
-        for (MerkkiNappi nappi : napit.getNapit()){
-            if(nappi.getMerkki().isEmpty()){
+
+        for (MerkkiNappi nappi : napit.getNapit()) {
+            if (nappi.getMerkki().isEmpty()) {
                 nappi.setMerkki();
             }
         }
@@ -69,7 +77,6 @@ public class ToimintoNappienKuuntelija implements ActionListener {
 
     public void setSanakentta(JTextArea sanakentta) {
         this.sanakentta = sanakentta;
-
     }
 
     public void setNapit(MerkkiNappiRuudukko napit) {

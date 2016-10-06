@@ -1,5 +1,6 @@
 package sanapeli.kayttoliittyma;
 
+import java.awt.Color;
 import javax.swing.JButton;
 import sanapeli.logiikka.Peliruudukko;
 
@@ -37,7 +38,7 @@ public class MerkkiNappi extends JButton {
     /**
      * Metodi palauttaa napin x-koordinaatin.
      * 
-     * @return MerkkiNappi-olio x
+     * @return MerkkiNappi-olion x
      */
     public int haeX() {
         return this.x;
@@ -46,7 +47,7 @@ public class MerkkiNappi extends JButton {
     /**
      * Metodi palauttaa napin y-koordinaatin.
      * 
-     * @return MerkkiNappi-olio y
+     * @return MerkkiNappi-olion y
      */
     public int haeY() {
         return this.y;
@@ -54,6 +55,12 @@ public class MerkkiNappi extends JButton {
 
     public Peliruudukko getRuudukko() {
         return ruudukko;
+    }
+    
+    public void hyvaksy(){
+        setText("");
+        setBackground(Color.MAGENTA);
+        setEnabled(false);
     }
     
     

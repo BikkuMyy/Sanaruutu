@@ -11,10 +11,12 @@ public class Pelialusta implements Peliruudukko {
 
     private Ruutu[][] ruudukko;
     private ValitutRuudut valitut;
+    private SananTarkistaja tarkistaja;
 
     public Pelialusta(int koko) {
         this.ruudukko = new Ruutu[koko][koko];
         this.valitut = new ValitutRuudut();
+        this.tarkistaja = new SananTarkistaja("sanalista.txt");
     }
 
     public Pelialusta() {
@@ -93,6 +95,11 @@ public class Pelialusta implements Peliruudukko {
     @Override
     public ArrayList<Ruutu> getValitut() {
         return valitut.getValitut();
+    }
+
+    @Override
+    public boolean tarkistaSana(String sana) {
+        return tarkistaja.tarkistaSana(sana);
     }
 
 }
