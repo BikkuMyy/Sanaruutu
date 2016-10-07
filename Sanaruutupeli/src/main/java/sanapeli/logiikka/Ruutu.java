@@ -4,14 +4,17 @@ package sanapeli.logiikka;
  * Luokka sisältää yhteen ruutuun liittyvät tiedot ja metodit niiden käsittelyyn.
  * @author mari
  */
-
-
 public class Ruutu {
 
     private int y;
     private int x;
     private Sisalto sisalto;
 
+    /**
+     * Konstruktori.
+     * @param y ruudun y-koordinaatti
+     * @param x ruudun x-koordinaatti
+     */
     public Ruutu(int y, int x) {
         this.y = y;
         this.x = x;

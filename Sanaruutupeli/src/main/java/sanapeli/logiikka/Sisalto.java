@@ -3,15 +3,18 @@ package sanapeli.logiikka;
 
 /**
  * Abstrakti luokka, joka määrittelee alaluokkiensa pakolliset toiminnot.
- * @author mari
+ * 
  */
 
 public abstract class Sisalto {
     
-    public Randomizer randomizer;
-
+    public Satunnaistaja satunnainen;
+    
+    /**
+     * Konstruktori.
+     */
     public Sisalto() {
-        this.randomizer = new Randomizer("kirjaimet.txt");
+        this.satunnainen = new Satunnaistaja("kirjaimet.txt");
     }
     
     // public abstract int getPisteet();

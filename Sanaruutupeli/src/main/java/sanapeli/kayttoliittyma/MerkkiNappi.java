@@ -5,22 +5,28 @@ import javax.swing.JButton;
 import sanapeli.logiikka.Peliruudukko;
 
 /**
- * Luokka sisältää yhteen nappiin liittyvät tiedot ja metodit niiden käsittelemiseen.
- * @author mari
+ * Luokka sisältää yhteen nappiin liittyvät tiedot ja metodit niiden
+ * käsittelemiseen.
+ *
  */
-
 public class MerkkiNappi extends JButton {
 
-    private Peliruudukko ruudukko;
+    private Peliruudukko sanapeli;
     private String merkki;
-    private  int y;
+    private int y;
     private int x;
 
-    public MerkkiNappi(int y, int x, Peliruudukko ruudukko) {
-        this.ruudukko = ruudukko;
+    /**
+     * Konstruktori.
+     * @param y napin y-koordinaatti
+     * @param x napin x-koordinaatti
+     * @param sanapeli Peliruudukko-rajapinnan ilmentymä
+     */
+    public MerkkiNappi(int y, int x, Peliruudukko sanapeli) {
+        this.sanapeli = sanapeli;
         this.y = y;
         this.x = x;
-        setMerkki();
+        super.setText(this.merkki = haeNappiinMerkkiRuudusta());
     }
 
     public String getMerkki() {
@@ -32,21 +38,21 @@ public class MerkkiNappi extends JButton {
     }
 
     private String haeNappiinMerkkiRuudusta() {
-        return ruudukko.getRuudukko()[y][x].toString();
+        return sanapeli.getRuudukko()[y][x].toString();
     }
-    
+
     /**
      * Metodi palauttaa napin x-koordinaatin.
-     * 
+     *
      * @return MerkkiNappi-olion x
      */
     public int haeX() {
         return this.x;
     }
-    
+
     /**
      * Metodi palauttaa napin y-koordinaatin.
-     * 
+     *
      * @return MerkkiNappi-olion y
      */
     public int haeY() {
@@ -54,17 +60,17 @@ public class MerkkiNappi extends JButton {
     }
 
     public Peliruudukko getRuudukko() {
-        return ruudukko;
+        return sanapeli;
     }
-    
-    public void hyvaksy(){
+    /**
+     * Metodi toteuttaa napissa tapahtuvat muutokset, 
+     * kun hyväksy-nappia painetaan.
+     * 
+     */
+    public void hyvaksy() {
         setText("");
         setBackground(Color.MAGENTA);
         setEnabled(false);
     }
-    
-    
-    
-    
 
 }

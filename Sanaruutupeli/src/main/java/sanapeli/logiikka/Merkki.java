@@ -10,9 +10,12 @@ package sanapeli.logiikka;
 public class Merkki extends Sisalto {
     private String merkki;
 //    private int pisteet;
-
+    
+    /**
+     * Konstruktori. 
+     */
     public Merkki() {
-        this.merkki = super.randomizer.satunnainenMerkki();
+        this.merkki = super.satunnainen.satunnainenMerkki();
     }
 
 //    public int getPisteet() {

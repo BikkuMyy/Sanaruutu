@@ -11,17 +11,17 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-public class RandomizerTest {
+public class SatunnaistajaTest {
     
-    private Randomizer randomizer;
+    private Satunnaistaja randomizer;
     ByteArrayOutputStream tulosvirta;
     
-    public RandomizerTest() {
+    public SatunnaistajaTest() {
     }
     
     @Before
     public void setUp() throws FileNotFoundException {
-        this.randomizer = new Randomizer ("kirjaimet.txt");
+        this.randomizer = new Satunnaistaja ("kirjaimet.txt");
         tulosvirta = new ByteArrayOutputStream();
         System.setOut(new PrintStream(tulosvirta));
     }
@@ -33,7 +33,7 @@ public class RandomizerTest {
     
     @Test
     public void virheilmoitusTulostuuOikein() throws Exception{
-        this.randomizer = new Randomizer("tiedosto.txt");
+        this.randomizer = new Satunnaistaja("tiedosto.txt");
         String tulos = tulosvirta.toString();
         assertTrue(tulos.contains("Tiedoston lukeminen epäonnistui."));
         

@@ -1,6 +1,5 @@
 package sanapeli.logiikka;
 
-// tarvii paremman nimen!
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,16 +10,20 @@ import java.util.Collections;
  * Luokka lukee saamansa tiedoston listaksi merkkijonoja.
  *
  */
-public class Randomizer {
+public class Satunnaistaja {
 
     private File tiedosto;
     private List<String> rivit;
 
-    public Randomizer(String tiedostonNimi) {
+    /**
+     * Konstruktori.
+     * @param tiedostonNimi luettavan tiedoston nimi
+     */
+    public Satunnaistaja(String tiedostonNimi) {
         this.tiedosto = new File(tiedostonNimi);
         this.rivit = new ArrayList<>();
         lueTiedostoListaan();
-        //pitäis olla erillinen luokka tiedoston lukemiselle ja randomizingille..?
+        //erillinen luokka tiedoston lukemiselle ja randomizingille..?
     }
 
     /**

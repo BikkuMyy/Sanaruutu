@@ -26,7 +26,7 @@ under the License.
     <copyright>&#169;2016</copyright>
     <item>
       <title>File: 15,
-             Errors: 0,
+             Errors: 7,
              Warnings: 0,
              Infos: 0
       </title>
@@ -44,20 +44,6 @@ under the License.
             </tr>
           </thead>
           <tbody>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#sanapeli.logiikka.Randomizer.java">sanapeli/logiikka/Randomizer.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#sanapeli.kayttoliittyma.ToimintoNappi.java">sanapeli/kayttoliittyma/ToimintoNappi.java</a>
@@ -139,12 +125,40 @@ under the License.
                   0
                 </td>
                 <td>
-                  0
+                  5
                 </td>
               </tr>
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#sanapeli.kayttoliittyma.MerkkiNappiRuudukko.java">sanapeli/kayttoliittyma/MerkkiNappiRuudukko.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#sanapeli.logiikka.SananTarkistaja.java">sanapeli/logiikka/SananTarkistaja.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#sanapeli.logiikka.Satunnaistaja.java">sanapeli/logiikka/Satunnaistaja.java</a>
                 </td>
                 <td>
                   0
@@ -195,7 +209,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  0
+                  1
                 </td>
               </tr>
                           <tr>
@@ -209,21 +223,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#sanapeli.logiikka.ValitutRuudut.java">sanapeli/logiikka/ValitutRuudut.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
+                  1
                 </td>
               </tr>
                           <tr>

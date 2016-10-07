@@ -14,11 +14,15 @@ import sanapeli.logiikka.Ruutu;
 public class ToimintoNappienKuuntelija implements ActionListener {
 
     private JTextArea sanakentta;
-    private Peliruudukko ruudukko;
+    private Peliruudukko sanapeli;
     private MerkkiNappiRuudukko napit;
-
-    public ToimintoNappienKuuntelija(Peliruudukko ruudukko) {
-        this.ruudukko = ruudukko;
+    
+    /**
+     * Konstruktori.
+     * @param sanapeli  Peliruudukko-rajapinnan ilmentymä 
+     */
+    public ToimintoNappienKuuntelija(Peliruudukko sanapeli) {
+        this.sanapeli = sanapeli;
     }
 
     @Override
@@ -35,22 +39,29 @@ public class ToimintoNappienKuuntelija implements ActionListener {
         
         //sanakentta.setBackground(Color.WHITE);
         this.sanakentta.setText("");
-        ruudukko.getValitut().clear();
+        sanapeli.getValitut().clear();
 
     }
 
+    /**
+     * Metodi toteuttaa toiminnot, jotka tapahtuvat,
+     * kun tyhjennä-nappia painetaan.
+     */
     public void tyhjenna() {
-        for (Ruutu ruutu : ruudukko.getValitut()) {
+        for (Ruutu ruutu : sanapeli.getValitut()) {
             MerkkiNappi nappi = napit.haeMerkkiNappi(ruutu.getY(), ruutu.getX());
             nappi.setEnabled(true);
             nappi.setBackground(Color.LIGHT_GRAY);
         }
     }
-
+    /**
+     * Metodi toteuttaa toiminnot, jotka tapahtuvat,
+     * kun hyväksy-nappia painetaan.
+     */
     public void hyvaksy() {
-        if (ruudukko.tarkistaSana(sanakentta.getText())) {
+        if (sanapeli.tarkistaSana(sanakentta.getText())) {
             //sanakentta.setBackground(Color.GREEN);
-            for (Ruutu ruutu : ruudukko.getValitut()) {
+            for (Ruutu ruutu : sanapeli.getValitut()) {
                 MerkkiNappi nappi = napit.haeMerkkiNappi(ruutu.getY(), ruutu.getX());
                 nappi.hyvaksy();
             }
@@ -64,9 +75,12 @@ public class ToimintoNappienKuuntelija implements ActionListener {
         }
 
     }
-
+    
+    /**
+     * Metodi päivittää pelialustan ruudukon ja sen perusteella merkkinapit.
+     */
     public void paivitaNapit() {
-        ruudukko.paivitaRuudukko();
+        sanapeli.paivitaRuudukko();
 
         for (MerkkiNappi nappi : napit.getNapit()) {
             if (nappi.getMerkki().isEmpty()) {

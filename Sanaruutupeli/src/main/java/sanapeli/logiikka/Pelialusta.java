@@ -7,18 +7,23 @@ import java.util.ArrayList;
  * Ruutu-olioita.
  *
  */
-public class Pelialusta implements Peliruudukko {
+public class Pelialusta {
 
     private Ruutu[][] ruudukko;
-    private ValitutRuudut valitut;
-    private SananTarkistaja tarkistaja;
+    private ArrayList<Ruutu> valitut;
 
+    /**
+     * Konstruktori 1.
+     * @param koko luotavan peliruudukon sivun pituus ruuduissa
+     */
     public Pelialusta(int koko) {
         this.ruudukko = new Ruutu[koko][koko];
-        this.valitut = new ValitutRuudut();
-        this.tarkistaja = new SananTarkistaja("sanalista.txt");
+        this.valitut = new ArrayList();
     }
 
+    /**
+     * Konstruktori 2, luo oletuskokoisen ruudukon.
+     */
     public Pelialusta() {
         this(7);
     }
@@ -56,10 +61,13 @@ public class Pelialusta implements Peliruudukko {
             }
         }
     }
-
-    @Override
+    
+    /**
+     * Metodi lisää valittujen ruutujen viereisiin Ruutu-olioihin sisällön,
+     * jos niillä ei sitä vielä ole.
+     */
     public void paivitaRuudukko() {
-        for (Ruutu ruutu : this.valitut.getValitut()) {
+        for (Ruutu ruutu : this.valitut) {
             int y = ruutu.getY();
             int x = ruutu.getX();
 
@@ -82,24 +90,23 @@ public class Pelialusta implements Peliruudukko {
         }
     }
 
-    @Override
     public Ruutu[][] getRuudukko() {
         return ruudukko;
     }
 
-    @Override
+    /**
+     * Metodi palauttaa sijainnissa (y, x) olevan Ruutu-olion.
+     * @param y haettavan ruudun y-koordinaatti
+     * @param x haettavan ruudun x-koordinaatti
+     * @return Ruutu-olio sijainnissa (y, x)
+     */
     public Ruutu getRuutu(int y, int x) {
         return ruudukko[y][x];
     }
 
-    @Override
     public ArrayList<Ruutu> getValitut() {
-        return valitut.getValitut();
+        return valitut;
     }
 
-    @Override
-    public boolean tarkistaSana(String sana) {
-        return tarkistaja.tarkistaSana(sana);
-    }
 
 }

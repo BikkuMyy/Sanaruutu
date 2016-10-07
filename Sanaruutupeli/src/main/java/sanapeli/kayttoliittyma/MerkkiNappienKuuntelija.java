@@ -15,6 +15,9 @@ public class MerkkiNappienKuuntelija implements ActionListener {
     private JTextArea sanakentta;
     private MerkkiNappiRuudukko napit;
 
+    /**
+     * Konstruktori.
+     */
     public MerkkiNappienKuuntelija() {
     }
 

@@ -1,55 +1,57 @@
-
 package sanapeli.logiikka;
-
 import java.util.ArrayList;
 import javax.swing.SwingUtilities;
 import sanapeli.kayttoliittyma.Kayttoliittyma;
 
 /**
- * Luokka vastaa Pelialustan ja Kayttoliittyman luomisesta sekä pelin käynnistämisestä.
+ * Luokka vastaa Pelialustan ja Kayttoliittyman luomisesta sekä pelin
+ * käynnistämisestä.
  */
 
-//pitäiskö tämän toteuttaa rajapinta ja vastata kaikesta liikenteestä
-//Pelialusta-luokka ei siihen sovi!
-public class Sanapeli {
+public class Sanapeli implements Peliruudukko {
+
     private Pelialusta pelialusta;
+    private SananTarkistaja tarkistaja;
+
+    /**
+     * Konstruktori.
+     */
     public Sanapeli() {
         this.pelialusta = new Pelialusta();
-    }
-    
-    /**
-     * Metodi luo ohjelman käyttöliittymän ja pelialustan alkutilanteen. 
-     */
-    
-    public void kaynnista() {
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(pelialusta);
-        SwingUtilities.invokeLater(kayttoliittyma);
-        pelialusta.luoAlkuTilanne();
-        
+        this.tarkistaja  = new SananTarkistaja("sanalista.txt");
     }
 
-//    @Override
-//    public Ruutu[][] getRuudukko() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    @Override
-//    public Ruutu getRuutu(int y, int x) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    @Override
-//    public ArrayList<Ruutu> getValitut() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    @Override
-//    public boolean tarkistaSana(String sana) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    @Override
-//    public void paivitaRuudukko() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
+    /**
+     * Metodi luo ohjelman käyttöliittymän ja pelialustan alkutilanteen.
+     */
+    public void kaynnista() {
+        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(this);
+        SwingUtilities.invokeLater(kayttoliittyma);
+        pelialusta.luoAlkuTilanne();
+    }
+
+    @Override
+    public Ruutu[][] getRuudukko() {
+        return pelialusta.getRuudukko();
+    }
+
+    @Override
+    public Ruutu getRuutu(int y, int x) {
+        return pelialusta.getRuutu(y, x);
+    }
+
+    @Override
+    public ArrayList<Ruutu> getValitut() {
+        return pelialusta.getValitut();
+    }
+
+    @Override
+    public boolean tarkistaSana(String sana) {
+        return tarkistaja.tarkistaSana(sana);
+    }
+
+    @Override
+    public void paivitaRuudukko() {
+        pelialusta.paivitaRuudukko();
+    }
 }

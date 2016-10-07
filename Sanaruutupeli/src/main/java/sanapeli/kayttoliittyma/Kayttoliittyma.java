@@ -13,25 +13,33 @@ import sanapeli.logiikka.Peliruudukko;
 /**
  * Luokka vastaa ohjelman graafisen käyttöliittymän luomisesta ja ylläpidosta.
  *
- * @author mari
  */
 public class Kayttoliittyma implements Runnable {
 
-    private Peliruudukko ruudukko;
+    private Peliruudukko sanapeli;
     private JFrame ikkuna;
     private int koko;
     private MerkkiNappienKuuntelija merkkiKuuntelija;
     private ToimintoNappienKuuntelija toimintoKuuntelija;
 
-    public Kayttoliittyma(int koko, Peliruudukko ruudukko) {
-        this.ruudukko = ruudukko;
+    /**
+     * Konstruktori 1.
+     * @param koko luotavan peliruudukon sivun pituus ruuduissa 
+     * @param sanapeli Peliruudukko-rajapinnan ilmentymä
+     */
+    public Kayttoliittyma(int koko, Peliruudukko sanapeli) {
+        this.sanapeli = sanapeli;
         this.merkkiKuuntelija = new MerkkiNappienKuuntelija();
-        this.toimintoKuuntelija = new ToimintoNappienKuuntelija(ruudukko);
+        this.toimintoKuuntelija = new ToimintoNappienKuuntelija(sanapeli);
         this.koko = koko;
     }
 
-    public Kayttoliittyma(Peliruudukko ruudukko) {
-        this(7, ruudukko);
+    /**
+     * Konstrukrori 2, luo oletuskokoisen ruudukon.
+     * @param sanapeli Peliruudukko-rajapinnan ilmentymä
+     */
+    public Kayttoliittyma(Peliruudukko sanapeli) {
+        this(7, sanapeli);
     }
 
     @Override
@@ -86,7 +94,7 @@ public class Kayttoliittyma implements Runnable {
      */
     private JPanel luoYlaosanKomponentit() {
         MerkkiNappiRuudukko merkkiNappiRuudukko = new MerkkiNappiRuudukko(koko,
-                merkkiKuuntelija, ruudukko);
+                merkkiKuuntelija, sanapeli);
         
         merkkiKuuntelija.setNapit(merkkiNappiRuudukko);
         toimintoKuuntelija.setNapit(merkkiNappiRuudukko);

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  * Rajapinta sovelluslogiikan ja kayttöliittymän välillä.
- * @author mari
+ * 
  */
 
 public interface Peliruudukko {
