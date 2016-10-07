@@ -29,10 +29,15 @@ public class MerkkiNappi extends JButton {
         super.setText(this.merkki = haeNappiinMerkkiRuudusta());
     }
 
+    
     public String getMerkki() {
         return this.merkki;
     }
 
+    /**
+     * Metodi hakee merkki-muuttujaan sisällön napin koordinaatteja vastaavasta ruudusta
+     * ja asettaa sen JButtonissa näkyväksi tekstiksi. 
+     */
     public void setMerkki() {
         super.setText(this.merkki = haeNappiinMerkkiRuudusta());
     }
