@@ -5,6 +5,7 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 import sanapeli.logiikka.Peliruudukko;
+import sanapeli.logiikka.Ruutu;
 
 /**
  * Luokka luo ja säilyttää MerkkiNappi-olioita ja niiden koordinaatteja.
@@ -68,9 +69,38 @@ public class MerkkiNappiRuudukko {
         int indeksi = y * koko + x;
         return napit.get(indeksi);
     }
+    
+    /**
+     * Metodi päivittää nappeihin merkit, kun edellinen sanan on hyväksytty
+     * ja uusia merkkejä tulee käyttöön.
+     */
+    public void paivita(){
+        for (Ruutu ruutu : pelinhallinta.getValitut()) {
+                MerkkiNappi nappi = haeMerkkiNappi(ruutu.getY(), ruutu.getX());
+                nappi.hyvaksy();
+            }
+        
+        for (MerkkiNappi nappi : napit) {
+            if (nappi.getMerkki().isEmpty()) {
+                nappi.setMerkki();
+            }
+        }
+    }
 
     public ArrayList<MerkkiNappi> getNapit() {
         return napit;
     }
-
+    
+    /**
+     * Metodi tarkistaa, onko kaikki ruudukon napit inaktiivisia.
+     * @return True, jos kaikki on inaktiivisia ja false jos yksikin ei ole
+     */
+    public boolean kaikkiInaktiivisia(){
+        for (MerkkiNappi nappi : napit) {
+            if (nappi.isEnabled()) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

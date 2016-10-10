@@ -74,14 +74,9 @@ public class Kayttoliittyma implements Runnable {
         JPanel alaosa = new JPanel(new BorderLayout());
         alaosa.setPreferredSize(new Dimension(500, 50));
 
-        JTextArea sanaKentta = luoSanakentta();
-        alaosa.add(sanaKentta, BorderLayout.WEST);
-
-        ToimintoNappi hyvaksy = luoToimintoNappi("Hyväksy");
-        alaosa.add(hyvaksy, BorderLayout.CENTER);
-
-        ToimintoNappi tyhjenna = luoToimintoNappi("Tyhjennä");
-        alaosa.add(tyhjenna, BorderLayout.EAST);
+        alaosa.add(luoSanakentta(), BorderLayout.WEST);
+        alaosa.add(luoToimintoNappi("Hyväksy"), BorderLayout.CENTER);
+        alaosa.add(luoToimintoNappi("Tyhjennä"), BorderLayout.EAST);
 
         return alaosa;
     }
@@ -135,8 +130,6 @@ public class Kayttoliittyma implements Runnable {
             nappi.setBackground(Color.red);
         } else {
             nappi.setBackground(Color.green);
-            //nappi.setEnabled(false);
-            //kunhan sanan tarkistus toimii, hyväksy-nappi voi olla niin pitkään disabled, että sana on järkevä
         }
 
         nappi.addActionListener(toimintoKuuntelija);

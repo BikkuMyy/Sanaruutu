@@ -37,8 +37,7 @@ public class ToimintoNappienKuuntelija implements ActionListener {
         if (toiminto.getToiminto().equals("Hyväksy")) {
             hyvaksy();
         }
-
-        //sanakentta.setBackground(Color.WHITE);
+        
         this.sanakentta.setText("");
         pelinhallinta.getValitut().clear();
 
@@ -62,20 +61,14 @@ public class ToimintoNappienKuuntelija implements ActionListener {
      */
     public void hyvaksy() {
         if (pelinhallinta.tarkistaSana(sanakentta.getText())) {
-            //sanakentta.setBackground(Color.GREEN);
-            for (Ruutu ruutu : pelinhallinta.getValitut()) {
-                MerkkiNappi nappi = napit.haeMerkkiNappi(ruutu.getY(), ruutu.getX());
-                nappi.hyvaksy();
-            }
             paivitaNapit();
-
         } else {
-            // tapahtuu liian nopeasti, värinmuutosta ja tekstiä ei ehi nähä
-//            sanakentta.setBackground(Color.RED);
-//           this.sanakentta.setText("Ei ole sana!");
             tyhjenna();
         }
-        // tarkistaLoppuikoPeli();
+        
+        if (onkoRuudukkoTyhja()){
+            pelinhallinta.lopeta();
+        } 
 
     }
 
@@ -84,12 +77,7 @@ public class ToimintoNappienKuuntelija implements ActionListener {
      */
     public void paivitaNapit() {
         pelinhallinta.paivitaRuudukko();
-
-        for (MerkkiNappi nappi : napit.getNapit()) {
-            if (nappi.getMerkki().isEmpty()) {
-                nappi.setMerkki();
-            }
-        }
+        napit.paivita();
     }
 
     public void setSanakentta(JTextArea sanakentta) {
@@ -99,14 +87,17 @@ public class ToimintoNappienKuuntelija implements ActionListener {
     public void setNapit(MerkkiNappiRuudukko napit) {
         this.napit = napit;
     }
+    
+    /**
+     * Metodi tarkistaa, loppuiko peli eli onko ruudukko tyhjä.
+     * @return True, jos ruudukko on tyhjä
+     */
 
-    private boolean tarkistaLoppuikoPeli() {
-        for (MerkkiNappi nappi : napit.getNapit()) {
-            if (nappi.isEnabled()) {
-                return false;
-            }
+    private boolean onkoRuudukkoTyhja() {
+        if(napit.kaikkiInaktiivisia()){
+            return true;
         }
-        return true;
+        return false;
     }
 
 }

@@ -29,6 +29,10 @@ public class Pelinhallinta implements Peliruudukko {
         SwingUtilities.invokeLater(kayttoliittyma);
         pelialusta.luoAlkuTilanne();
     }
+    
+    public void lopeta(){
+        System.exit(0);
+    }
 
     @Override
     public Ruutu[][] getRuudukko() {
