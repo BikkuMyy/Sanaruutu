@@ -46,9 +46,7 @@ public class Kayttoliittyma implements Runnable {
     public void run() {
         ikkuna = new JFrame("Sanaruutupeli");
         ikkuna.setPreferredSize(new Dimension(500, 550));
-        ikkuna.addWindowListener(new IkkunanKuuntelija());
         ikkuna.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        ikkuna.setD
 
         luoKomponentit(ikkuna.getContentPane());
 
