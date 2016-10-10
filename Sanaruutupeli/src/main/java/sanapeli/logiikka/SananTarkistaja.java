@@ -16,6 +16,7 @@ public class SananTarkistaja {
 
     /**
      * Konstruktori.
+     *
      * @param tiedostonNimi luettavan tiedoston nimi
      */
     public SananTarkistaja(String tiedostonNimi) {
@@ -23,12 +24,12 @@ public class SananTarkistaja {
         this.tiedosto = new File(tiedostonNimi);
         lueTiedostoHashSetiin();
     }
-    
+
     /**
      * Metodi tarkistaa onko sille parametrina annettu sana sanalistalla.
-     * 
-     * @param sana  tarkistettava sana
-     * 
+     *
+     * @param sana tarkistettava sana
+     *
      * @return true/false
      */
     public boolean tarkistaSana(String sana) {

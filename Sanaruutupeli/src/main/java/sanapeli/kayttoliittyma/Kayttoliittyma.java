@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.PopupMenu;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -24,7 +25,8 @@ public class Kayttoliittyma implements Runnable {
 
     /**
      * Konstruktori 1.
-     * @param koko luotavan peliruudukon sivun pituus ruuduissa 
+     *
+     * @param koko luotavan peliruudukon sivun pituus ruuduissa
      * @param pelinhallinta Peliruudukko-rajapinnan ilmentymä
      */
     public Kayttoliittyma(int koko, Peliruudukko pelinhallinta) {
@@ -36,16 +38,17 @@ public class Kayttoliittyma implements Runnable {
 
     /**
      * Konstrukrori 2, luo oletuskokoisen ruudukon.
-     * @param sanapeli Peliruudukko-rajapinnan ilmentymä
+     *
+     * @param hallinta Peliruudukko-rajapinnan ilmentymä
      */
-    public Kayttoliittyma(Peliruudukko sanapeli) {
-        this(7, sanapeli);
+    public Kayttoliittyma(Peliruudukko hallinta) {
+        this(7, hallinta);
     }
 
     @Override
     public void run() {
         ikkuna = new JFrame("Sanaruutupeli");
-        ikkuna.setPreferredSize(new Dimension(500, 550));
+        ikkuna.setPreferredSize(new Dimension(500, 600));
         ikkuna.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         luoKomponentit(ikkuna.getContentPane());
@@ -61,8 +64,42 @@ public class Kayttoliittyma implements Runnable {
      * @param container
      */
     private void luoKomponentit(Container container) {
-        container.add(luoYlaosanKomponentit());
+        container.add(luoYlaosanKomponentit(), BorderLayout.NORTH);
+        container.add(luoRuudukkoKomponentti());
         container.add(luoAlaosanKomponentit(), BorderLayout.SOUTH);
+    }
+    
+    /**
+     * Metodi luo ikkunan yläosan komponentit.
+     * 
+     * @return JPanel
+     */
+    private JPanel luoYlaosanKomponentit() {
+        JPanel ylaosa = new JPanel(new BorderLayout());
+        ylaosa.setPreferredSize(new Dimension(500, 50));
+        
+        
+        ylaosa.add(luoToimintoNappi("Lopeta"), BorderLayout.EAST);
+        
+        
+        return ylaosa;
+    }
+    
+     /**
+     * Metodi luo ikkunan ruudukkokomponentin.
+     *
+     * @return JPanel
+     */
+    private JPanel luoRuudukkoKomponentti() {
+        MerkkiNappiRuudukko merkkiNappiRuudukko = new MerkkiNappiRuudukko(koko,
+                merkkiKuuntelija, hallinta);
+
+        merkkiKuuntelija.setNapit(merkkiNappiRuudukko);
+        toimintoKuuntelija.setNapit(merkkiNappiRuudukko);
+        JPanel ruudukko = merkkiNappiRuudukko.luoMerkkiNappiRuudukko();
+        ruudukko.setPreferredSize(new Dimension(500, 500));
+
+        return ruudukko;
     }
 
     /**
@@ -79,23 +116,6 @@ public class Kayttoliittyma implements Runnable {
         alaosa.add(luoToimintoNappi("Tyhjennä"), BorderLayout.EAST);
 
         return alaosa;
-    }
-
-    /**
-     * Metodi luo ikkunan yläosan komponentit.
-     *
-     * @return JPanel
-     */
-    private JPanel luoYlaosanKomponentit() {
-        MerkkiNappiRuudukko merkkiNappiRuudukko = new MerkkiNappiRuudukko(koko,
-                merkkiKuuntelija, hallinta);
-        
-        merkkiKuuntelija.setNapit(merkkiNappiRuudukko);
-        toimintoKuuntelija.setNapit(merkkiNappiRuudukko);
-        JPanel ylaosa = merkkiNappiRuudukko.luoMerkkiNappiRuudukko();
-        ylaosa.setPreferredSize(new Dimension(500, 500));
-
-        return ylaosa;
     }
 
     /**
@@ -126,14 +146,16 @@ public class Kayttoliittyma implements Runnable {
         ToimintoNappi nappi = new ToimintoNappi(toiminto);
         nappi.setPreferredSize(new Dimension(125, 50));
 
-        if (toiminto.equals("Tyhjennä")) {
-            nappi.setBackground(Color.red);
-        } else {
+        if (toiminto.equals("Hyväksy")) {
             nappi.setBackground(Color.green);
+        } else {
+            nappi.setBackground(Color.red);
         }
 
         nappi.addActionListener(toimintoKuuntelija);
 
         return nappi;
     }
+
+    
 }

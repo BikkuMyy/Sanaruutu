@@ -21,5 +21,4 @@ public interface Peliruudukko {
     void paivitaRuudukko();
 
     public void lopeta();
-
 }

@@ -29,6 +29,10 @@ public class ToimintoNappienKuuntelija implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         ToimintoNappi toiminto = (ToimintoNappi) e.getSource();
+        
+        if (toiminto.getToiminto().equals("Lopeta")){
+            pelinhallinta.lopeta();
+        }
 
         if (toiminto.getToiminto().equals("Tyhjennä")) {
             tyhjenna();
@@ -56,8 +60,8 @@ public class ToimintoNappienKuuntelija implements ActionListener {
     }
 
     /**
-     * Metodi toteuttaa toiminnot, jotka tapahtuvat, kun hyväksy-nappia
-     * painetaan.
+     * Metodi toteuttaa hyväksy-nappia painettaessa tapahtuvat toiminnot
+     * ja antaa lopetuskäskyn jos ruudukko on tyhjä. 
      */
     public void hyvaksy() {
         if (pelinhallinta.tarkistaSana(sanakentta.getText())) {
@@ -66,9 +70,9 @@ public class ToimintoNappienKuuntelija implements ActionListener {
             tyhjenna();
         }
         
-        if (onkoRuudukkoTyhja()){
+        if (napit.kaikkiInaktiivisia()){
             pelinhallinta.lopeta();
-        } 
+        }
 
     }
 
@@ -86,18 +90,6 @@ public class ToimintoNappienKuuntelija implements ActionListener {
 
     public void setNapit(MerkkiNappiRuudukko napit) {
         this.napit = napit;
-    }
-    
-    /**
-     * Metodi tarkistaa, loppuiko peli eli onko ruudukko tyhjä.
-     * @return True, jos ruudukko on tyhjä
-     */
-
-    private boolean onkoRuudukkoTyhja() {
-        if(napit.kaikkiInaktiivisia()){
-            return true;
-        }
-        return false;
     }
 
 }

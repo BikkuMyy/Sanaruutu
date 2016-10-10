@@ -30,6 +30,7 @@ public class Pelinhallinta implements Peliruudukko {
         pelialusta.luoAlkuTilanne();
     }
     
+    @Override
     public void lopeta(){
         System.exit(0);
     }
@@ -58,4 +59,7 @@ public class Pelinhallinta implements Peliruudukko {
     public void paivitaRuudukko() {
         pelialusta.paivitaRuudukko();
     }
+
+    
+    
 }
