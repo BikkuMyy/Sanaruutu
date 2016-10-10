@@ -14,15 +14,16 @@ import sanapeli.logiikka.Ruutu;
 public class ToimintoNappienKuuntelija implements ActionListener {
 
     private JTextArea sanakentta;
-    private Peliruudukko sanapeli;
+    private Peliruudukko pelinhallinta;
     private MerkkiNappiRuudukko napit;
-    
+
     /**
      * Konstruktori.
-     * @param sanapeli  Peliruudukko-rajapinnan ilmentymä 
+     *
+     * @param hallinta Peliruudukko-rajapinnan ilmentymä
      */
-    public ToimintoNappienKuuntelija(Peliruudukko sanapeli) {
-        this.sanapeli = sanapeli;
+    public ToimintoNappienKuuntelija(Peliruudukko hallinta) {
+        this.pelinhallinta = hallinta;
     }
 
     @Override
@@ -36,51 +37,53 @@ public class ToimintoNappienKuuntelija implements ActionListener {
         if (toiminto.getToiminto().equals("Hyväksy")) {
             hyvaksy();
         }
-        
+
         //sanakentta.setBackground(Color.WHITE);
         this.sanakentta.setText("");
-        sanapeli.getValitut().clear();
+        pelinhallinta.getValitut().clear();
 
     }
 
     /**
-     * Metodi toteuttaa toiminnot, jotka tapahtuvat,
-     * kun tyhjennä-nappia painetaan.
+     * Metodi toteuttaa toiminnot, jotka tapahtuvat, kun tyhjennä-nappia
+     * painetaan.
      */
     public void tyhjenna() {
-        for (Ruutu ruutu : sanapeli.getValitut()) {
+        for (Ruutu ruutu : pelinhallinta.getValitut()) {
             MerkkiNappi nappi = napit.haeMerkkiNappi(ruutu.getY(), ruutu.getX());
             nappi.setEnabled(true);
             nappi.setBackground(Color.LIGHT_GRAY);
         }
     }
+
     /**
-     * Metodi toteuttaa toiminnot, jotka tapahtuvat,
-     * kun hyväksy-nappia painetaan.
+     * Metodi toteuttaa toiminnot, jotka tapahtuvat, kun hyväksy-nappia
+     * painetaan.
      */
     public void hyvaksy() {
-        if (sanapeli.tarkistaSana(sanakentta.getText())) {
+        if (pelinhallinta.tarkistaSana(sanakentta.getText())) {
             //sanakentta.setBackground(Color.GREEN);
-            for (Ruutu ruutu : sanapeli.getValitut()) {
+            for (Ruutu ruutu : pelinhallinta.getValitut()) {
                 MerkkiNappi nappi = napit.haeMerkkiNappi(ruutu.getY(), ruutu.getX());
                 nappi.hyvaksy();
             }
             paivitaNapit();
-            
+
         } else {
             // tapahtuu liian nopeasti, värinmuutosta ja tekstiä ei ehi nähä
 //            sanakentta.setBackground(Color.RED);
 //           this.sanakentta.setText("Ei ole sana!");
             tyhjenna();
         }
+        // tarkistaLoppuikoPeli();
 
     }
-    
+
     /**
      * Metodi päivittää pelialustan ruudukon ja sen perusteella merkkinapit.
      */
     public void paivitaNapit() {
-        sanapeli.paivitaRuudukko();
+        pelinhallinta.paivitaRuudukko();
 
         for (MerkkiNappi nappi : napit.getNapit()) {
             if (nappi.getMerkki().isEmpty()) {
@@ -95,6 +98,15 @@ public class ToimintoNappienKuuntelija implements ActionListener {
 
     public void setNapit(MerkkiNappiRuudukko napit) {
         this.napit = napit;
+    }
+
+    private boolean tarkistaLoppuikoPeli() {
+        for (MerkkiNappi nappi : napit.getNapit()) {
+            if (nappi.isEnabled()) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }

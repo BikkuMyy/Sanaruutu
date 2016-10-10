@@ -15,20 +15,20 @@ public class MerkkiNappiRuudukko {
     private int koko;
     private ArrayList<MerkkiNappi> napit;
     private MerkkiNappienKuuntelija merkkiKuuntelija;
-    private Peliruudukko sanapeli;
+    private Peliruudukko pelinhallinta;
 
     /**
      * Konstrukstori.
      * @param koko ruudukon koko
      * @param kuuntelija MerkkiNappi-olioiden tapahtumakäsittelijä
-     * @param sanapeli  Peliruudukko-rajapinnan ilmentymä
+     * @param hallinta  Peliruudukko-rajapinnan ilmentymä
      */
     public MerkkiNappiRuudukko(int koko, MerkkiNappienKuuntelija kuuntelija,
-            Peliruudukko sanapeli) {
+            Peliruudukko hallinta) {
         this.koko = koko;
         this.napit = new ArrayList();
         this.merkkiKuuntelija = kuuntelija;
-        this.sanapeli = sanapeli;
+        this.pelinhallinta = hallinta;
     }
 
     /**
@@ -50,7 +50,7 @@ public class MerkkiNappiRuudukko {
     }
 
     private MerkkiNappi luoMerkkiNappi(int y, int x) {
-        MerkkiNappi nappi = new MerkkiNappi(y, x, sanapeli);
+        MerkkiNappi nappi = new MerkkiNappi(y, x, pelinhallinta);
         nappi.setBackground(Color.LIGHT_GRAY);
         nappi.addActionListener(merkkiKuuntelija);
 

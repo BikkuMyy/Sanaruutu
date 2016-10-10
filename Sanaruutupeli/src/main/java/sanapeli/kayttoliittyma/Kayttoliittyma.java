@@ -16,7 +16,7 @@ import sanapeli.logiikka.Peliruudukko;
  */
 public class Kayttoliittyma implements Runnable {
 
-    private Peliruudukko sanapeli;
+    private Peliruudukko hallinta;
     private JFrame ikkuna;
     private int koko;
     private MerkkiNappienKuuntelija merkkiKuuntelija;
@@ -25,12 +25,12 @@ public class Kayttoliittyma implements Runnable {
     /**
      * Konstruktori 1.
      * @param koko luotavan peliruudukon sivun pituus ruuduissa 
-     * @param sanapeli Peliruudukko-rajapinnan ilmentymä
+     * @param pelinhallinta Peliruudukko-rajapinnan ilmentymä
      */
-    public Kayttoliittyma(int koko, Peliruudukko sanapeli) {
-        this.sanapeli = sanapeli;
+    public Kayttoliittyma(int koko, Peliruudukko pelinhallinta) {
+        this.hallinta = pelinhallinta;
         this.merkkiKuuntelija = new MerkkiNappienKuuntelija();
-        this.toimintoKuuntelija = new ToimintoNappienKuuntelija(sanapeli);
+        this.toimintoKuuntelija = new ToimintoNappienKuuntelija(pelinhallinta);
         this.koko = koko;
     }
 
@@ -46,8 +46,9 @@ public class Kayttoliittyma implements Runnable {
     public void run() {
         ikkuna = new JFrame("Sanaruutupeli");
         ikkuna.setPreferredSize(new Dimension(500, 550));
-
+        ikkuna.addWindowListener(new IkkunanKuuntelija());
         ikkuna.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        ikkuna.setD
 
         luoKomponentit(ikkuna.getContentPane());
 
@@ -94,7 +95,7 @@ public class Kayttoliittyma implements Runnable {
      */
     private JPanel luoYlaosanKomponentit() {
         MerkkiNappiRuudukko merkkiNappiRuudukko = new MerkkiNappiRuudukko(koko,
-                merkkiKuuntelija, sanapeli);
+                merkkiKuuntelija, hallinta);
         
         merkkiKuuntelija.setNapit(merkkiNappiRuudukko);
         toimintoKuuntelija.setNapit(merkkiNappiRuudukko);
@@ -113,6 +114,7 @@ public class Kayttoliittyma implements Runnable {
     private JTextArea luoSanakentta() {
         JTextArea sanaKentta = new JTextArea("");
         sanaKentta.setPreferredSize(new Dimension(250, 50));
+        sanaKentta.setEditable(false);
         this.merkkiKuuntelija.setSanakentta(sanaKentta);
         this.toimintoKuuntelija.setSanakentta(sanaKentta);
 

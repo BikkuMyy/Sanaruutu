@@ -11,39 +11,36 @@ import sanapeli.logiikka.Peliruudukko;
  */
 public class MerkkiNappi extends JButton {
 
-    private Peliruudukko sanapeli;
+    private Peliruudukko pelinhallinta;
     private String merkki;
     private int y;
     private int x;
 
     /**
      * Konstruktori.
+     *
      * @param y napin y-koordinaatti
      * @param x napin x-koordinaatti
-     * @param sanapeli Peliruudukko-rajapinnan ilmentymä
+     * @param hallinta Peliruudukko-rajapinnan ilmentymä
      */
-    public MerkkiNappi(int y, int x, Peliruudukko sanapeli) {
-        this.sanapeli = sanapeli;
+    public MerkkiNappi(int y, int x, Peliruudukko hallinta) {
+        this.pelinhallinta = hallinta;
         this.y = y;
         this.x = x;
-        super.setText(this.merkki = haeNappiinMerkkiRuudusta());
-    }
-
-    
-    public String getMerkki() {
-        return this.merkki;
+        setMerkki();
     }
 
     /**
-     * Metodi hakee merkki-muuttujaan sisällön napin koordinaatteja vastaavasta ruudusta
-     * ja asettaa sen JButtonissa näkyväksi tekstiksi. 
+     * Metodi hakee merkki-muuttujaan sisällön napin koordinaatteja vastaavasta
+     * ruudusta ja asettaa sen JButtonissa näkyväksi tekstiksi.
      */
     public void setMerkki() {
         super.setText(this.merkki = haeNappiinMerkkiRuudusta());
+        tarkistaAktiivisuus();
     }
 
     private String haeNappiinMerkkiRuudusta() {
-        return sanapeli.getRuudukko()[y][x].toString();
+        return pelinhallinta.getRuudukko()[y][x].toString();
     }
 
     /**
@@ -65,17 +62,30 @@ public class MerkkiNappi extends JButton {
     }
 
     public Peliruudukko getRuudukko() {
-        return sanapeli;
+        return pelinhallinta;
     }
+
     /**
-     * Metodi toteuttaa napissa tapahtuvat muutokset, 
-     * kun hyväksy-nappia painetaan.
-     * 
+     * Metodi toteuttaa napissa tapahtuvat muutokset, kun hyväksy-nappia
+     * painetaan.
+     *
      */
     public void hyvaksy() {
         setText("");
         setBackground(Color.MAGENTA);
         setEnabled(false);
+    }
+
+    private void tarkistaAktiivisuus() {
+        if (this.merkki.isEmpty()) {
+            setEnabled(false);
+        } else {
+            setEnabled(true);
+        }
+    }
+    
+    public String getMerkki() {
+        return this.merkki;
     }
 
 }
