@@ -107,6 +107,14 @@ public class Pelialusta {
     public ArrayList<Ruutu> getValitut() {
         return valitut;
     }
+    
+    public int laskeValittujenPisteet(){
+        int summa = 0;
+        for (Ruutu ruutu : valitut){
+            summa += ruutu.getSisalto().getPisteet();
+        }
+        return summa;
+    }
 
 
 }

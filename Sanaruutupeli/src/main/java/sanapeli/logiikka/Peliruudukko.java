@@ -21,4 +21,6 @@ public interface Peliruudukko {
     void paivitaRuudukko();
 
     public void lopeta();
+
+    public int laskePisteet();
 }

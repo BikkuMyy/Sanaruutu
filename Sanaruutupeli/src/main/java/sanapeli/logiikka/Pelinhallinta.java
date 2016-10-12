@@ -12,6 +12,7 @@ public class Pelinhallinta implements Peliruudukko {
 
     private Pelialusta pelialusta;
     private SananTarkistaja tarkistaja;
+    private int pisteet;
 
     /**
      * Konstruktori.
@@ -19,6 +20,7 @@ public class Pelinhallinta implements Peliruudukko {
     public Pelinhallinta() {
         this.pelialusta = new Pelialusta();
         this.tarkistaja  = new SananTarkistaja("sanalista.txt");
+        this.pisteet = 0;
     }
 
     /**
@@ -60,6 +62,9 @@ public class Pelinhallinta implements Peliruudukko {
         pelialusta.paivitaRuudukko();
     }
 
-    
+    @Override
+    public int laskePisteet() {
+        return pelialusta.laskeValittujenPisteet();
+    }
     
 }

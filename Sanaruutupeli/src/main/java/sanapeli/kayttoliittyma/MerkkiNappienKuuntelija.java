@@ -40,7 +40,6 @@ public class MerkkiNappienKuuntelija implements ActionListener {
                 ruudukko.getValitut().add(ruudukko.getRuutu(nappi.haeY(), nappi.haeX()));
             }
         }
-
     }
 
 }

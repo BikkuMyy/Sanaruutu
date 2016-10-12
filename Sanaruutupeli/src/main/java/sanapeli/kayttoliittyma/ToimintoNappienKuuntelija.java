@@ -14,6 +14,7 @@ import sanapeli.logiikka.Ruutu;
 public class ToimintoNappienKuuntelija implements ActionListener {
 
     private JTextArea sanakentta;
+    private JTextArea pistekentta;
     private Peliruudukko pelinhallinta;
     private MerkkiNappiRuudukko napit;
 
@@ -65,6 +66,8 @@ public class ToimintoNappienKuuntelija implements ActionListener {
      */
     public void hyvaksy() {
         if (pelinhallinta.tarkistaSana(sanakentta.getText())) {
+            int pisteet = Integer.parseInt(pistekentta.getText()) + pelinhallinta.laskePisteet();
+            pistekentta.setText(""+pisteet);
             paivitaNapit();
         } else {
             tyhjenna();
@@ -73,7 +76,6 @@ public class ToimintoNappienKuuntelija implements ActionListener {
         if (napit.kaikkiInaktiivisia()){
             pelinhallinta.lopeta();
         }
-
     }
 
     /**
@@ -86,6 +88,10 @@ public class ToimintoNappienKuuntelija implements ActionListener {
 
     public void setSanakentta(JTextArea sanakentta) {
         this.sanakentta = sanakentta;
+    }
+    
+    public void setPistekentta(JTextArea pistekentta) {
+        this.pistekentta = pistekentta;
     }
 
     public void setNapit(MerkkiNappiRuudukko napit) {

@@ -17,7 +17,7 @@ public abstract class Sisalto {
         this.satunnainen = new Satunnaistaja("kirjaimet.txt");
     }
     
-    // public abstract int getPisteet();
+    public abstract int getPisteet();
 
     @Override
     public abstract String toString();

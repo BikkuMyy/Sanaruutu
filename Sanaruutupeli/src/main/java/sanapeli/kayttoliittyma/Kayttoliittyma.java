@@ -78,7 +78,7 @@ public class Kayttoliittyma implements Runnable {
         JPanel ylaosa = new JPanel(new BorderLayout());
         ylaosa.setPreferredSize(new Dimension(500, 50));
         
-        
+        ylaosa.add(luoPistekentta(), BorderLayout.WEST);
         ylaosa.add(luoToimintoNappi("Lopeta"), BorderLayout.EAST);
         
         
@@ -132,6 +132,17 @@ public class Kayttoliittyma implements Runnable {
         this.toimintoKuuntelija.setSanakentta(sanaKentta);
 
         return sanaKentta;
+    }
+    
+    private JTextArea luoPistekentta() {
+        JTextArea pisteKentta = new JTextArea("");
+        pisteKentta.setPreferredSize(new Dimension(250, 50));
+        pisteKentta.setEditable(false);
+        pisteKentta.setText("0");
+        this.toimintoKuuntelija.setPistekentta(pisteKentta);
+        
+
+        return pisteKentta;
     }
 
     /**
