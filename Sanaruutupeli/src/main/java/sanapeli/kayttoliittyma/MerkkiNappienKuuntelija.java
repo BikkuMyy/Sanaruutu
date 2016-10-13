@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTextArea;
-import sanapeli.logiikka.Peliruudukko;
+import sanapeli.logiikka.Pelilogiikka;
 
 /**
  * Luokka vastaa MerkkiNappi-olioiden tapahtumienkäsittelystä.
@@ -36,7 +36,7 @@ public class MerkkiNappienKuuntelija implements ActionListener {
                 nappi.setBackground(Color.CYAN);
                 nappi.setEnabled(false);
                 sanakentta.setText(sanakentta.getText() + nappi.getMerkki());
-                Peliruudukko ruudukko = nappi.getRuudukko();
+                Pelilogiikka ruudukko = nappi.getRuudukko();
                 ruudukko.getValitut().add(ruudukko.getRuutu(nappi.haeY(), nappi.haeX()));
             }
         }

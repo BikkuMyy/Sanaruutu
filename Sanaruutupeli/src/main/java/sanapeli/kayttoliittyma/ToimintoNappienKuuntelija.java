@@ -4,8 +4,8 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTextArea;
-import sanapeli.logiikka.Peliruudukko;
 import sanapeli.logiikka.Ruutu;
+import sanapeli.logiikka.Pelilogiikka;
 
 /**
  * Luokka vastaa ToimintoNappi-olioiden tapahtumienkäsittelystä.
@@ -15,7 +15,7 @@ public class ToimintoNappienKuuntelija implements ActionListener {
 
     private JTextArea sanakentta;
     private JTextArea pistekentta;
-    private Peliruudukko pelinhallinta;
+    private Pelilogiikka pelinhallinta;
     private MerkkiNappiRuudukko napit;
 
     /**
@@ -23,7 +23,7 @@ public class ToimintoNappienKuuntelija implements ActionListener {
      *
      * @param hallinta Peliruudukko-rajapinnan ilmentymä
      */
-    public ToimintoNappienKuuntelija(Peliruudukko hallinta) {
+    public ToimintoNappienKuuntelija(Pelilogiikka hallinta) {
         this.pelinhallinta = hallinta;
     }
 

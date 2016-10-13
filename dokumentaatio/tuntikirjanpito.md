@@ -23,4 +23,4 @@ Päivä | Tunnit | Kuvaus
 06.10.2016 | 3 h | Sekvenssikaavio molempien toimintonappien käyttötapauksille, peliin sanan tarkistus sanalistalta
 07.10.2016 | 4 h | Ohjelman rakenteen parantelua, luokkakaavion ja testien päivitystä, checkstyle - ja Pit-raportit, sekvenssikaavioiden viimeistely
 09.10.2016 | 1 h | Käyttöliittymän korjailua, lopetusehdot
-12.10.2016 | 1 h | Pistelaskuominaisuuden ohjelmointi
+12.10.2016 | 1 h | Pistelaskuominaisuuden ohjelmointi, käyttöohjeet

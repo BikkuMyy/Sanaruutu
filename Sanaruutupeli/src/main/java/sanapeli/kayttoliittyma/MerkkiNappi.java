@@ -2,7 +2,7 @@ package sanapeli.kayttoliittyma;
 
 import java.awt.Color;
 import javax.swing.JButton;
-import sanapeli.logiikka.Peliruudukko;
+import sanapeli.logiikka.Pelilogiikka;
 
 /**
  * Luokka sisältää yhteen nappiin liittyvät tiedot ja metodit niiden
@@ -11,7 +11,7 @@ import sanapeli.logiikka.Peliruudukko;
  */
 public class MerkkiNappi extends JButton {
 
-    private Peliruudukko pelinhallinta;
+    private Pelilogiikka pelinhallinta;
     private String merkki;
     private int y;
     private int x;
@@ -23,7 +23,7 @@ public class MerkkiNappi extends JButton {
      * @param x napin x-koordinaatti
      * @param hallinta Peliruudukko-rajapinnan ilmentymä
      */
-    public MerkkiNappi(int y, int x, Peliruudukko hallinta) {
+    public MerkkiNappi(int y, int x, Pelilogiikka hallinta) {
         this.pelinhallinta = hallinta;
         this.y = y;
         this.x = x;
@@ -61,7 +61,7 @@ public class MerkkiNappi extends JButton {
         return this.y;
     }
 
-    public Peliruudukko getRuudukko() {
+    public Pelilogiikka getRuudukko() {
         return pelinhallinta;
     }
 

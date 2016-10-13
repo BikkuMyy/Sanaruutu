@@ -113,7 +113,7 @@ public class Pelialusta {
         for (Ruutu ruutu : valitut){
             summa += ruutu.getSisalto().getPisteet();
         }
-        return summa;
+        return summa*valitut.size();
     }
 
 

@@ -8,7 +8,7 @@ import sanapeli.kayttoliittyma.Kayttoliittyma;
  * käynnistämisestä.
  */
 
-public class Pelinhallinta implements Peliruudukko {
+public class Pelinhallinta implements Pelilogiikka {
 
     private Pelialusta pelialusta;
     private SananTarkistaja tarkistaja;

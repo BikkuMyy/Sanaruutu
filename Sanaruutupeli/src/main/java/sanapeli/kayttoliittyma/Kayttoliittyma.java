@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
-import sanapeli.logiikka.Peliruudukko;
+import sanapeli.logiikka.Pelilogiikka;
 
 /**
  * Luokka vastaa ohjelman graafisen käyttöliittymän luomisesta ja ylläpidosta.
@@ -17,7 +17,7 @@ import sanapeli.logiikka.Peliruudukko;
  */
 public class Kayttoliittyma implements Runnable {
 
-    private Peliruudukko hallinta;
+    private Pelilogiikka hallinta;
     private JFrame ikkuna;
     private int koko;
     private MerkkiNappienKuuntelija merkkiKuuntelija;
@@ -29,7 +29,7 @@ public class Kayttoliittyma implements Runnable {
      * @param koko luotavan peliruudukon sivun pituus ruuduissa
      * @param pelinhallinta Peliruudukko-rajapinnan ilmentymä
      */
-    public Kayttoliittyma(int koko, Peliruudukko pelinhallinta) {
+    public Kayttoliittyma(int koko, Pelilogiikka pelinhallinta) {
         this.hallinta = pelinhallinta;
         this.merkkiKuuntelija = new MerkkiNappienKuuntelija();
         this.toimintoKuuntelija = new ToimintoNappienKuuntelija(pelinhallinta);
@@ -41,7 +41,7 @@ public class Kayttoliittyma implements Runnable {
      *
      * @param hallinta Peliruudukko-rajapinnan ilmentymä
      */
-    public Kayttoliittyma(Peliruudukko hallinta) {
+    public Kayttoliittyma(Pelilogiikka hallinta) {
         this(7, hallinta);
     }
 

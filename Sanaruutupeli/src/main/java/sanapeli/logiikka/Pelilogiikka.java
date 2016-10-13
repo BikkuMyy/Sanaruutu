@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * 
  */
 
-public interface Peliruudukko {
+public interface Pelilogiikka {
     
     Ruutu [][] getRuudukko();
     

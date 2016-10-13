@@ -61,7 +61,7 @@ public class PelialustaTest {
 
         for (int y = (ruudukko.length / 2 - 1); y <= (ruudukko.length / 2 + 1); y++) {
             for (int x = (ruudukko[y].length / 2 - 1); x <= (ruudukko[y].length / 2 + 1); x++) {
-                assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(ruudukko[y][x].toString()));
+                assertTrue("AEIOUYÄÖHJKLMNPRSTVD".contains(ruudukko[y][x].toString()));
             }
         }
     }

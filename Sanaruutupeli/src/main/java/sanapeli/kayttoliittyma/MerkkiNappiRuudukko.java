@@ -4,8 +4,8 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import javax.swing.JPanel;
-import sanapeli.logiikka.Peliruudukko;
 import sanapeli.logiikka.Ruutu;
+import sanapeli.logiikka.Pelilogiikka;
 
 /**
  * Luokka luo ja säilyttää MerkkiNappi-olioita ja niiden koordinaatteja.
@@ -16,7 +16,7 @@ public class MerkkiNappiRuudukko {
     private int koko;
     private ArrayList<MerkkiNappi> napit;
     private MerkkiNappienKuuntelija merkkiKuuntelija;
-    private Peliruudukko pelinhallinta;
+    private Pelilogiikka pelinhallinta;
 
     /**
      * Konstrukstori.
@@ -25,7 +25,7 @@ public class MerkkiNappiRuudukko {
      * @param hallinta  Peliruudukko-rajapinnan ilmentymä
      */
     public MerkkiNappiRuudukko(int koko, MerkkiNappienKuuntelija kuuntelija,
-            Peliruudukko hallinta) {
+            Pelilogiikka hallinta) {
         this.koko = koko;
         this.napit = new ArrayList();
         this.merkkiKuuntelija = kuuntelija;
