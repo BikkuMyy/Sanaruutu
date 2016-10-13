@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.PopupMenu;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -128,6 +129,7 @@ public class Kayttoliittyma implements Runnable {
         JTextArea sanaKentta = new JTextArea("");
         sanaKentta.setPreferredSize(new Dimension(250, 50));
         sanaKentta.setEditable(false);
+        sanaKentta.setFont(new Font("Monospaced", Font.PLAIN, 20));
         this.merkkiKuuntelija.setSanakentta(sanaKentta);
         this.toimintoKuuntelija.setSanakentta(sanaKentta);
 
@@ -139,6 +141,7 @@ public class Kayttoliittyma implements Runnable {
         pisteKentta.setPreferredSize(new Dimension(250, 50));
         pisteKentta.setEditable(false);
         pisteKentta.setText("0");
+        pisteKentta.setFont(new Font("Monospaced", Font.PLAIN, 20));
         this.toimintoKuuntelija.setPistekentta(pisteKentta);
         
 

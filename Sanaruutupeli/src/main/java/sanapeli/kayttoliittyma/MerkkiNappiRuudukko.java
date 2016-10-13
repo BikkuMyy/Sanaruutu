@@ -9,7 +9,7 @@ import sanapeli.logiikka.Pelilogiikka;
 
 /**
  * Luokka luo ja säilyttää MerkkiNappi-olioita ja niiden koordinaatteja.
- * 
+ *
  */
 public class MerkkiNappiRuudukko {
 
@@ -20,9 +20,10 @@ public class MerkkiNappiRuudukko {
 
     /**
      * Konstrukstori.
+     *
      * @param koko ruudukon koko
      * @param kuuntelija MerkkiNappi-olioiden tapahtumakäsittelijä
-     * @param hallinta  Peliruudukko-rajapinnan ilmentymä
+     * @param hallinta Peliruudukko-rajapinnan ilmentymä
      */
     public MerkkiNappiRuudukko(int koko, MerkkiNappienKuuntelija kuuntelija,
             Pelilogiikka hallinta) {
@@ -69,17 +70,17 @@ public class MerkkiNappiRuudukko {
         int indeksi = y * koko + x;
         return napit.get(indeksi);
     }
-    
+
     /**
-     * Metodi päivittää nappeihin merkit, kun edellinen sanan on hyväksytty
-     * ja uusia merkkejä tulee käyttöön.
+     * Metodi päivittää nappeihin merkit, kun edellinen sanan on hyväksytty ja
+     * uusia merkkejä tulee käyttöön.
      */
-    public void paivita(){
+    public void paivita() {
         for (Ruutu ruutu : pelinhallinta.getValitut()) {
-                MerkkiNappi nappi = haeMerkkiNappi(ruutu.getY(), ruutu.getX());
-                nappi.hyvaksy();
-            }
-        
+            MerkkiNappi nappi = haeMerkkiNappi(ruutu.getY(), ruutu.getX());
+            nappi.hyvaksy();
+        }
+
         for (MerkkiNappi nappi : napit) {
             if (nappi.getMerkki().isEmpty()) {
                 nappi.setMerkki();
@@ -90,12 +91,13 @@ public class MerkkiNappiRuudukko {
     public ArrayList<MerkkiNappi> getNapit() {
         return napit;
     }
-    
+
     /**
      * Metodi tarkistaa, onko kaikki ruudukon napit inaktiivisia.
+     *
      * @return True, jos kaikki on inaktiivisia ja false jos yksikin ei ole
      */
-    public boolean kaikkiInaktiivisia(){
+    public boolean kaikkiInaktiivisia() {
         for (MerkkiNappi nappi : napit) {
             if (nappi.isEnabled()) {
                 return false;

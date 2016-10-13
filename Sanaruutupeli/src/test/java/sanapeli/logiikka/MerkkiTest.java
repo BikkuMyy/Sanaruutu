@@ -21,6 +21,24 @@ public class MerkkiTest {
     public void konstruktoriAsettaaOikeanSisallonMerkille() {
         assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(merkki.toString()));
     }
+    
+    @Test
+    public void konstruktoriAsettaaPisteetMerkille() {
+        assertTrue("1234".contains(""+merkki.getPisteet()));
+    }
+    
+    @Test
+    public void merkinPisteetAsetetaanOikein(){
+        if ("AEINST".contains(merkki.toString())){
+            assertEquals(1, merkki.getPisteet());
+        } else if ("UOÄKLM".contains(merkki.toString())){
+            assertEquals(2, merkki.getPisteet());
+        } else if ("PRHJYV".contains(merkki.toString())){
+            assertEquals(3, merkki.getPisteet());
+        } else {
+            assertEquals(4, merkki.getPisteet());
+        }
+    }
 
     @Test
     public void tulostusToimiiOikein(){

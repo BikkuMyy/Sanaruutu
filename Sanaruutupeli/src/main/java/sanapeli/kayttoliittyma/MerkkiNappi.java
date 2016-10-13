@@ -1,6 +1,7 @@
 package sanapeli.kayttoliittyma;
 
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JButton;
 import sanapeli.logiikka.Pelilogiikka;
 
@@ -36,6 +37,7 @@ public class MerkkiNappi extends JButton {
      */
     public void setMerkki() {
         super.setText(this.merkki = haeNappiinMerkkiRuudusta());
+        super.setFont(new Font("Monospaced", Font.BOLD, 20));
         tarkistaAktiivisuus();
     }
 

@@ -1,4 +1,5 @@
 package sanapeli.logiikka;
+
 import java.util.ArrayList;
 import javax.swing.SwingUtilities;
 import sanapeli.kayttoliittyma.Kayttoliittyma;
@@ -7,7 +8,6 @@ import sanapeli.kayttoliittyma.Kayttoliittyma;
  * Luokka vastaa Pelialustan ja Kayttoliittyman luomisesta sekä pelin
  * käynnistämisestä.
  */
-
 public class Pelinhallinta implements Pelilogiikka {
 
     private Pelialusta pelialusta;
@@ -19,7 +19,7 @@ public class Pelinhallinta implements Pelilogiikka {
      */
     public Pelinhallinta() {
         this.pelialusta = new Pelialusta();
-        this.tarkistaja  = new SananTarkistaja("sanalista.txt");
+        this.tarkistaja = new SananTarkistaja("sanalista.txt");
         this.pisteet = 0;
     }
 
@@ -31,9 +31,9 @@ public class Pelinhallinta implements Pelilogiikka {
         SwingUtilities.invokeLater(kayttoliittyma);
         pelialusta.luoAlkuTilanne();
     }
-    
+
     @Override
-    public void lopeta(){
+    public void lopeta() {
         System.exit(0);
     }
 
@@ -66,5 +66,5 @@ public class Pelinhallinta implements Pelilogiikka {
     public int laskePisteet() {
         return pelialusta.laskeValittujenPisteet();
     }
-    
+
 }

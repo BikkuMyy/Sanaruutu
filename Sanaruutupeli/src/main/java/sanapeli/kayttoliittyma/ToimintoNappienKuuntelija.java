@@ -30,8 +30,8 @@ public class ToimintoNappienKuuntelija implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         ToimintoNappi toiminto = (ToimintoNappi) e.getSource();
-        
-        if (toiminto.getToiminto().equals("Lopeta")){
+
+        if (toiminto.getToiminto().equals("Lopeta")) {
             pelinhallinta.lopeta();
         }
 
@@ -42,7 +42,7 @@ public class ToimintoNappienKuuntelija implements ActionListener {
         if (toiminto.getToiminto().equals("Hyväksy")) {
             hyvaksy();
         }
-        
+
         this.sanakentta.setText("");
         pelinhallinta.getValitut().clear();
 
@@ -61,19 +61,19 @@ public class ToimintoNappienKuuntelija implements ActionListener {
     }
 
     /**
-     * Metodi toteuttaa hyväksy-nappia painettaessa tapahtuvat toiminnot
-     * ja antaa lopetuskäskyn jos ruudukko on tyhjä. 
+     * Metodi toteuttaa hyväksy-nappia painettaessa tapahtuvat toiminnot ja
+     * antaa lopetuskäskyn jos ruudukko on tyhjä.
      */
     public void hyvaksy() {
         if (pelinhallinta.tarkistaSana(sanakentta.getText())) {
             int pisteet = Integer.parseInt(pistekentta.getText()) + pelinhallinta.laskePisteet();
-            pistekentta.setText(""+pisteet);
+            pistekentta.setText("" + pisteet);
             paivitaNapit();
         } else {
             tyhjenna();
         }
-        
-        if (napit.kaikkiInaktiivisia()){
+
+        if (napit.kaikkiInaktiivisia()) {
             pelinhallinta.lopeta();
         }
     }
@@ -89,7 +89,7 @@ public class ToimintoNappienKuuntelija implements ActionListener {
     public void setSanakentta(JTextArea sanakentta) {
         this.sanakentta = sanakentta;
     }
-    
+
     public void setPistekentta(JTextArea pistekentta) {
         this.pistekentta = pistekentta;
     }

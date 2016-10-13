@@ -1,4 +1,3 @@
-
 package sanapeli.logiikka;
 
 /**
@@ -6,13 +5,13 @@ package sanapeli.logiikka;
  *
  * @author mari
  */
-
 public class Merkki extends Sisalto {
+
     private String merkki;
     private int pisteet;
-    
+
     /**
-     * Konstruktori. 
+     * Konstruktori.
      */
     public Merkki() {
         this.merkki = super.satunnainen.satunnainenMerkki();
@@ -30,17 +29,15 @@ public class Merkki extends Sisalto {
     }
 
     private void asetaPisteet() {
-        if ("AEINST".contains(merkki)){
+        if ("AEINST".contains(merkki)) {
             this.pisteet = 1;
-        } else if("UOÄKLM".contains(merkki)){
+        } else if ("UOÄKLM".contains(merkki)) {
             this.pisteet = 2;
-        } else if ("PRHJYV".contains(merkki)){
+        } else if ("PRHJYV".contains(merkki)) {
             this.pisteet = 3;
         } else {
             this.pisteet = 4;
         }
     }
-    
-    
-    
+
 }

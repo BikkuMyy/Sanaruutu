@@ -1,5 +1,6 @@
 package sanapeli.kayttoliittyma;
 
+import java.awt.Font;
 import javax.swing.JButton;
 
 /**
@@ -16,6 +17,7 @@ public class ToimintoNappi extends JButton {
      */
     public ToimintoNappi(String toiminto) {
         super.setText(this.toiminto = toiminto);
+        super.setFont(new Font("Monospaced", Font.BOLD, 15));
     }
 
     public String getToiminto() {

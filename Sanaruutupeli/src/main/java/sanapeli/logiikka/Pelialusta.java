@@ -14,6 +14,7 @@ public class Pelialusta {
 
     /**
      * Konstruktori 1.
+     *
      * @param koko luotavan peliruudukon sivun pituus ruuduissa
      */
     public Pelialusta(int koko) {
@@ -61,10 +62,10 @@ public class Pelialusta {
             }
         }
     }
-    
+
     /**
-     * Metodi lisää valittujen ruutujen viereisiin Ruutu-olioihin sisällön,
-     * jos niillä ei sitä vielä ole.
+     * Metodi lisää valittujen ruutujen viereisiin Ruutu-olioihin sisällön, jos
+     * niillä ei sitä vielä ole.
      */
     public void paivitaRuudukko() {
         for (Ruutu ruutu : this.valitut) {
@@ -96,6 +97,7 @@ public class Pelialusta {
 
     /**
      * Metodi palauttaa sijainnissa (y, x) olevan Ruutu-olion.
+     *
      * @param y haettavan ruudun y-koordinaatti
      * @param x haettavan ruudun x-koordinaatti
      * @return Ruutu-olio sijainnissa (y, x)
@@ -107,14 +109,13 @@ public class Pelialusta {
     public ArrayList<Ruutu> getValitut() {
         return valitut;
     }
-    
-    public int laskeValittujenPisteet(){
+
+    public int laskeValittujenPisteet() {
         int summa = 0;
-        for (Ruutu ruutu : valitut){
+        for (Ruutu ruutu : valitut) {
             summa += ruutu.getSisalto().getPisteet();
         }
-        return summa*valitut.size();
+        return summa * valitut.size();
     }
-
 
 }
