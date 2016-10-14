@@ -16,21 +16,21 @@ public class MerkkiNappiRuudukko {
     private int koko;
     private ArrayList<MerkkiNappi> napit;
     private MerkkiNappienKuuntelija merkkiKuuntelija;
-    private Pelilogiikka pelinhallinta;
+    private Pelilogiikka logiikka;
 
     /**
      * Konstrukstori.
      *
      * @param koko ruudukon koko
      * @param kuuntelija MerkkiNappi-olioiden tapahtumakäsittelijä
-     * @param hallinta Peliruudukko-rajapinnan ilmentymä
+     * @param hallinta Pelilogiikka-rajapinnan ilmentymä
      */
     public MerkkiNappiRuudukko(int koko, MerkkiNappienKuuntelija kuuntelija,
             Pelilogiikka hallinta) {
         this.koko = koko;
         this.napit = new ArrayList();
         this.merkkiKuuntelija = kuuntelija;
-        this.pelinhallinta = hallinta;
+        this.logiikka = hallinta;
     }
 
     /**
@@ -52,7 +52,7 @@ public class MerkkiNappiRuudukko {
     }
 
     private MerkkiNappi luoMerkkiNappi(int y, int x) {
-        MerkkiNappi nappi = new MerkkiNappi(y, x, pelinhallinta);
+        MerkkiNappi nappi = new MerkkiNappi(y, x, logiikka);
         nappi.setBackground(Color.LIGHT_GRAY);
         nappi.addActionListener(merkkiKuuntelija);
 
@@ -76,7 +76,7 @@ public class MerkkiNappiRuudukko {
      * uusia merkkejä tulee käyttöön.
      */
     public void paivita() {
-        for (Ruutu ruutu : pelinhallinta.getValitut()) {
+        for (Ruutu ruutu : logiikka.getValitut()) {
             MerkkiNappi nappi = haeMerkkiNappi(ruutu.getY(), ruutu.getX());
             nappi.hyvaksy();
         }

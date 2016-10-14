@@ -92,15 +92,16 @@ public class PelialustaTest {
         }
     }
     
-//    @Test
-//    public void ruudukonUlkopuolelleEiLisataMerkkeja(){
-//        pelialusta.luoAlkuTilanne();
-//        ArrayList <Ruutu> valitut = pelialusta.getValitut();
-//        valitut.add(pelialusta.getRuutu(0, 0));
-//        valitut.add(pelialusta.getRuutu(0, 1));
-//        valitut.add(pelialusta.getRuutu(1, 0));
-//        pelialusta.paivitaRuudukko();
-//        
-//    }
+    @Test
+    public void pisteidenLaskuToimii(){
+        pelialusta.luoAlkuTilanne();
+        pelialusta.getValitut().add(pelialusta.getRuutu(3, 3));
+        pelialusta.getValitut().add(pelialusta.getRuutu(3, 4));
+        
+        int merkki1 = pelialusta.getRuutu(3, 3).getSisalto().getPisteet();
+        int merkki2 = pelialusta.getRuutu(3, 4).getSisalto().getPisteet();
+        
+        assertEquals((merkki1+merkki2)*2, pelialusta.laskeValittujenPisteet());
+    }
 
 }

@@ -12,7 +12,7 @@ import sanapeli.logiikka.Pelilogiikka;
  */
 public class MerkkiNappi extends JButton {
 
-    private Pelilogiikka pelinhallinta;
+    private Pelilogiikka logiikka;
     private String merkki;
     private int y;
     private int x;
@@ -22,10 +22,10 @@ public class MerkkiNappi extends JButton {
      *
      * @param y napin y-koordinaatti
      * @param x napin x-koordinaatti
-     * @param hallinta Peliruudukko-rajapinnan ilmentymä
+     * @param logiikka Pelilogiikka-rajapinnan ilmentymä
      */
-    public MerkkiNappi(int y, int x, Pelilogiikka hallinta) {
-        this.pelinhallinta = hallinta;
+    public MerkkiNappi(int y, int x, Pelilogiikka logiikka) {
+        this.logiikka = logiikka;
         this.y = y;
         this.x = x;
         setMerkki();
@@ -42,7 +42,7 @@ public class MerkkiNappi extends JButton {
     }
 
     private String haeNappiinMerkkiRuudusta() {
-        return pelinhallinta.getRuudukko()[y][x].toString();
+        return logiikka.getRuudukko()[y][x].toString();
     }
 
     /**
@@ -63,8 +63,8 @@ public class MerkkiNappi extends JButton {
         return this.y;
     }
 
-    public Pelilogiikka getRuudukko() {
-        return pelinhallinta;
+    public Pelilogiikka getLogiikka() {
+        return logiikka;
     }
 
     /**

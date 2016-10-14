@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -28,28 +29,26 @@ public class Kayttoliittyma implements Runnable {
      * Konstruktori 1.
      *
      * @param koko luotavan peliruudukon sivun pituus ruuduissa
-     * @param pelinhallinta Peliruudukko-rajapinnan ilmentymä
+     * @param logiikkka Pelilogiikka-rajapinnan ilmentymä
      */
-    public Kayttoliittyma(int koko, Pelilogiikka pelinhallinta) {
-        this.hallinta = pelinhallinta;
+    public Kayttoliittyma(int koko, Pelilogiikka logiikkka) {
+        this.hallinta = logiikkka;
         this.merkkiKuuntelija = new MerkkiNappienKuuntelija();
-        this.toimintoKuuntelija = new ToimintoNappienKuuntelija(pelinhallinta);
+        this.toimintoKuuntelija = new ToimintoNappienKuuntelija(logiikkka);
         this.koko = koko;
     }
 
     /**
      * Konstrukrori 2, luo oletuskokoisen ruudukon.
      *
-     * @param hallinta Peliruudukko-rajapinnan ilmentymä
+     * @param logiikka Pelilogiikka-rajapinnan ilmentymä
      */
-    public Kayttoliittyma(Pelilogiikka hallinta) {
-        this(7, hallinta);
+    public Kayttoliittyma(Pelilogiikka logiikka) {
+        this(7, logiikka);
     }
 
     @Override
     public void run() {
-        JOptionPane aloitusikkuna = new JOptionPane("Aloitus");
-        aloitusikkuna.setVisible(true);
         ikkuna = new JFrame("Sanaruutupeli");
         ikkuna.setPreferredSize(new Dimension(500, 600));
         ikkuna.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -57,9 +56,9 @@ public class Kayttoliittyma implements Runnable {
         luoKomponentit(ikkuna.getContentPane());
 
         ikkuna.pack();
-        ikkuna.setVisible(false);
+        ikkuna.setVisible(true);
     }
-
+    
     /**
      * Metodi luo ikkunan läyttöliittymäkomponentit ja lisää ne
      * Container-olioon.

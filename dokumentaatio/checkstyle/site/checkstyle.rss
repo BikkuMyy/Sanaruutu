@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2016</copyright>
     <item>
-      <title>File: 15,
-             Errors: 5,
+      <title>File: 17,
+             Errors: 8,
              Warnings: 0,
              Infos: 0
       </title>
@@ -61,6 +61,34 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#sanapeli.kayttoliittyma.MerkkiNappienKuuntelija.java">sanapeli/kayttoliittyma/MerkkiNappienKuuntelija.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#sanapeli.logiikka.Pelilogiikka.java">sanapeli/logiikka/Pelilogiikka.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  7
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#sanapeli.logiikka.Pelinhallinta.java">sanapeli/logiikka/Pelinhallinta.java</a>
                 </td>
                 <td>
                   0
@@ -116,20 +144,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#sanapeli.logiikka.Peliruudukko.java">sanapeli/logiikka/Peliruudukko.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  5
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#sanapeli.kayttoliittyma.MerkkiNappiRuudukko.java">sanapeli/kayttoliittyma/MerkkiNappiRuudukko.java</a>
                 </td>
                 <td>
@@ -172,6 +186,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="${project.url}/checkstyle.html#sanapeli.kayttoliittyma.DialoginKuuntelija.java">sanapeli/kayttoliittyma/DialoginKuuntelija.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="${project.url}/checkstyle.html#sanapeli.logiikka.Merkki.java">sanapeli/logiikka/Merkki.java</a>
                 </td>
                 <td>
@@ -186,7 +214,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#sanapeli.logiikka.Sanapeli.java">sanapeli/logiikka/Sanapeli.java</a>
+                  <a href="${project.url}/checkstyle.html#sanapeli.logiikka.Ruutu.java">sanapeli/logiikka/Ruutu.java</a>
                 </td>
                 <td>
                   0
@@ -200,7 +228,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#sanapeli.logiikka.Ruutu.java">sanapeli/logiikka/Ruutu.java</a>
+                  <a href="${project.url}/checkstyle.html#sanapeli.kayttoliittyma.AloitusValikko.java">sanapeli/kayttoliittyma/AloitusValikko.java</a>
                 </td>
                 <td>
                   0
@@ -251,7 +279,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  0
+                  1
                 </td>
               </tr>
                       </tbody>

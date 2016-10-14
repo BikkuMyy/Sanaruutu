@@ -33,13 +33,18 @@ public class MerkkiNappienKuuntelija implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         for (MerkkiNappi nappi : napit.getNapit()) {
             if (nappi == e.getSource()) {
-                nappi.setBackground(Color.CYAN);
-                nappi.setEnabled(false);
+                valitse(nappi);
                 sanakentta.setText(sanakentta.getText() + nappi.getMerkki());
-                Pelilogiikka ruudukko = nappi.getRuudukko();
-                ruudukko.getValitut().add(ruudukko.getRuutu(nappi.haeY(), nappi.haeX()));
+
             }
         }
+    }
+
+    private void valitse(MerkkiNappi nappi) {
+        nappi.setBackground(Color.CYAN);
+        nappi.setEnabled(false);
+        Pelilogiikka logiikka = nappi.getLogiikka();
+        logiikka.getValitut().add(logiikka.getRuutu(nappi.haeY(), nappi.haeX())); 
     }
 
 }

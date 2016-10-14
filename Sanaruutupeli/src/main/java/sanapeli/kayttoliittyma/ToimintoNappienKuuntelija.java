@@ -15,16 +15,16 @@ public class ToimintoNappienKuuntelija implements ActionListener {
 
     private JTextArea sanakentta;
     private JTextArea pistekentta;
-    private Pelilogiikka pelinhallinta;
+    private Pelilogiikka logiikka;
     private MerkkiNappiRuudukko napit;
 
     /**
      * Konstruktori.
      *
-     * @param hallinta Peliruudukko-rajapinnan ilmentymä
+     * @param logiikka Pelilogiikka-rajapinnan ilmentymä
      */
-    public ToimintoNappienKuuntelija(Pelilogiikka hallinta) {
-        this.pelinhallinta = hallinta;
+    public ToimintoNappienKuuntelija(Pelilogiikka logiikka) {
+        this.logiikka = logiikka;
     }
 
     @Override
@@ -32,7 +32,7 @@ public class ToimintoNappienKuuntelija implements ActionListener {
         ToimintoNappi toiminto = (ToimintoNappi) e.getSource();
 
         if (toiminto.getToiminto().equals("Lopeta")) {
-            pelinhallinta.lopeta();
+            logiikka.lopeta();
         }
 
         if (toiminto.getToiminto().equals("Tyhjennä")) {
@@ -44,7 +44,7 @@ public class ToimintoNappienKuuntelija implements ActionListener {
         }
 
         this.sanakentta.setText("");
-        pelinhallinta.getValitut().clear();
+        logiikka.getValitut().clear();
 
     }
 
@@ -53,7 +53,7 @@ public class ToimintoNappienKuuntelija implements ActionListener {
      * painetaan.
      */
     public void tyhjenna() {
-        for (Ruutu ruutu : pelinhallinta.getValitut()) {
+        for (Ruutu ruutu : logiikka.getValitut()) {
             MerkkiNappi nappi = napit.haeMerkkiNappi(ruutu.getY(), ruutu.getX());
             nappi.setEnabled(true);
             nappi.setBackground(Color.LIGHT_GRAY);
@@ -65,8 +65,8 @@ public class ToimintoNappienKuuntelija implements ActionListener {
      * antaa lopetuskäskyn jos ruudukko on tyhjä.
      */
     public void hyvaksy() {
-        if (pelinhallinta.tarkistaSana(sanakentta.getText())) {
-            int pisteet = Integer.parseInt(pistekentta.getText()) + pelinhallinta.laskePisteet();
+        if (logiikka.tarkistaSana(sanakentta.getText())) {
+            int pisteet = Integer.parseInt(pistekentta.getText()) + logiikka.laskePisteet();
             pistekentta.setText("" + pisteet);
             paivitaNapit();
         } else {
@@ -74,7 +74,7 @@ public class ToimintoNappienKuuntelija implements ActionListener {
         }
 
         if (napit.kaikkiInaktiivisia()) {
-            pelinhallinta.lopeta();
+            logiikka.lopeta();
         }
     }
 
@@ -82,7 +82,7 @@ public class ToimintoNappienKuuntelija implements ActionListener {
      * Metodi päivittää pelialustan ruudukon ja sen perusteella merkkinapit.
      */
     public void paivitaNapit() {
-        pelinhallinta.paivitaRuudukko();
+        logiikka.paivitaRuudukko();
         napit.paivita();
     }
 

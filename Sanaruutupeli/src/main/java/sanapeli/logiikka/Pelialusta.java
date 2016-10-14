@@ -109,6 +109,12 @@ public class Pelialusta {
     public ArrayList<Ruutu> getValitut() {
         return valitut;
     }
+    
+    /**
+     * Metodi laskee valittujen ruutujen sisältämien kirjainten pisteet yhteen.
+     * 
+     * @return pisteiden summa kerrottuna valittujen ruutujen määrällä
+     */
 
     public int laskeValittujenPisteet() {
         int summa = 0;
