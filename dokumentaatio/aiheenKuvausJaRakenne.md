@@ -29,7 +29,7 @@ Kayttoliittyma-luokka luo JFramen, sen komponentit ja tapahtumienkuuntelijat. Me
 ##Luokkakaaviot
 
 - Ensisijainen luokkakaavio, jossa logiikka- ja käyttöliittymäpakkaukset eritelty
-![PakkausLuokkakaavio](/dokumentaatio/Luokkakaavio.png "Pakkaus-luokkakaavio")
+![PakkausLuokkakaavio](/dokumentaatio/Luokkakaavio2.png "Pakkaus-luokkakaavio")
 
 - Luokkakaavio, jossa myös kytkentärajoitukset
 ![Luokkakaavio](/dokumentaatio/YumlLuokkakaavio.png "YumlLuokkakaavio")
@@ -37,11 +37,11 @@ Kayttoliittyma-luokka luo JFramen, sen komponentit ja tapahtumienkuuntelijat. Me
 ##Sekvenssikaaviot
 
 - Sekvenssikaavio - merkkinapin klikkaaminen
-![Sekvenssikaavio](/dokumentaatio/Sekvenssikaavio-merkkinappi.png "MerkkiNappi-sekvenssikaavio")
+![Sekvenssikaavio](/dokumentaatio/Sekvenssikaavio-merkkinappi2.png "MerkkiNappi-sekvenssikaavio")
 
 - Sekvenssikaavio - tyhjennä-napin klikkaaminen
-![Sekvenssikaavio](/dokumentaatio/Sekvenssikaavio-tyhjennaNappi.png "TyhjennäNappi-sekvenssikaavio")
+![Sekvenssikaavio](/dokumentaatio/Sekvenssikaavio-tyhjennaNappi2.png "TyhjennäNappi-sekvenssikaavio")
 
 - Sekvenssikaavio - hyväksy-napin klikkaaminen
-![Sekvenssikaavio](/dokumentaatio/Sekvenssikaavio-hyvaksyNappi.png "HyväjsyNappi-sekvenssikaavio")
+![Sekvenssikaavio](/dokumentaatio/Sekvenssikaavio-hyvaksyNappi2.png "HyväjsyNappi-sekvenssikaavio")
 
