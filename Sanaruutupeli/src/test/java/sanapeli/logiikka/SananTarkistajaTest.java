@@ -27,12 +27,12 @@ public class SananTarkistajaTest {
         assertTrue(tarkistaja.getSanat().size() > 0);
     }
 
-    @Test
-    public void virheilmoitusTulostuuOikein() throws Exception {
-        this.tarkistaja = new SananTarkistaja("sanat.txt");
-        String tulos = tulosvirta.toString();
-        assertTrue(tulos.contains("Tiedoston lukeminen epäonnistui."));
-    }
+//    @Test
+//    public void virheilmoitusTulostuuOikein() throws Exception {
+//        this.tarkistaja = new SananTarkistaja("sanat.txt");
+//        String tulos = tulosvirta.toString();
+//        assertTrue(tulos.contains("Tiedoston lukeminen epäonnistui."));
+//    }
 
     @Test
     public void lukijaEiLisaaValiviivoja() {
