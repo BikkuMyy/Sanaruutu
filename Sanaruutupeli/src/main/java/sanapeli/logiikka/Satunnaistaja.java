@@ -20,7 +20,7 @@ public class Satunnaistaja {
      * @param tiedostonNimi luettavan tiedoston nimi
      */
     public Satunnaistaja(String tiedostonNimi) {
-        this.tiedosto = new File(tiedostonNimi);
+        this.tiedosto = new File(getClass().getResource(tiedostonNimi).getFile());
         this.rivit = new ArrayList<>();
         lueTiedostoListaan();
         //erillinen luokka tiedoston lukemiselle ja randomizingille..?

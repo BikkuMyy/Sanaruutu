@@ -21,7 +21,7 @@ public class SananTarkistaja {
      */
     public SananTarkistaja(String tiedostonNimi) {
         this.sanat = new HashSet();
-        this.tiedosto = new File(tiedostonNimi);
+        this.tiedosto = new File(getClass().getResource(tiedostonNimi).getFile());
         lueTiedostoHashSetiin();
     }
 
@@ -50,7 +50,7 @@ public class SananTarkistaja {
         }
 
         while (lukija.hasNextLine()) {
-            this.sanat.add(lukija.nextLine().split("-")[1]);
+            this.sanat.add(lukija.nextLine());
         }
 
         lukija.close();
