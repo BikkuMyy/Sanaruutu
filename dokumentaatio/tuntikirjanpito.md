@@ -17,10 +17,11 @@ Päivä | Tunnit | Kuvaus
 26.09.2016 | 2 h | Käyttöliittymään jatkoa - "tyhjennä"-nappi toimii
 28.09.2016 | 2 h | Luokkakaavion päivitys, käyttöliittymän rakenteen läpikäynti
 29.09.2016 | 2 h | JavaDoc luokille, "hyväksy"-napin toimintojen ohjelmointia
-30.09.2016	| 2 h | JavaDoc:ia metodeille, testien päivitystä, chechkstyle ja pit -raportit
+30.09.2016	| 2 h | JavaDoc:ia metodeille, testien päivitystä, checkstyle ja pit -raportit
 02.10.2016 | 1 h | "Hyväksy" -nappi toimii, uusien merkkien lisäyksen ohjelmointia
 05.10.2016 | 1 h | Sekvenssikaavio käyttötapaukselle, jossa pelaaja klikkaa merkkinappia
 06.10.2016 | 3 h | Sekvenssikaavio molempien toimintonappien käyttötapauksille, peliin sanan tarkistus sanalistalta
 07.10.2016 | 4 h | Ohjelman rakenteen parantelua, luokkakaavion ja testien päivitystä, checkstyle - ja Pit-raportit, sekvenssikaavioiden viimeistely
 09.10.2016 | 1 h | Käyttöliittymän korjailua, lopetusehdot
 12.10.2016 | 1 h | Pistelaskuominaisuuden ohjelmointi, käyttöohjeet
+13.10.2016 | 2 h | Käyttöliittymän hiomista, demo, rakennekuvauksen kirjoittaminen

@@ -5,8 +5,8 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.PopupMenu;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
@@ -48,6 +48,8 @@ public class Kayttoliittyma implements Runnable {
 
     @Override
     public void run() {
+        JOptionPane aloitusikkuna = new JOptionPane("Aloitus");
+        aloitusikkuna.setVisible(true);
         ikkuna = new JFrame("Sanaruutupeli");
         ikkuna.setPreferredSize(new Dimension(500, 600));
         ikkuna.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -55,7 +57,7 @@ public class Kayttoliittyma implements Runnable {
         luoKomponentit(ikkuna.getContentPane());
 
         ikkuna.pack();
-        ikkuna.setVisible(true);
+        ikkuna.setVisible(false);
     }
 
     /**
@@ -81,7 +83,6 @@ public class Kayttoliittyma implements Runnable {
         
         ylaosa.add(luoPistekentta(), BorderLayout.WEST);
         ylaosa.add(luoToimintoNappi("Lopeta"), BorderLayout.EAST);
-        
         
         return ylaosa;
     }
