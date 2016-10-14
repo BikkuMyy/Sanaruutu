@@ -25,4 +25,4 @@ Päivä | Tunnit | Kuvaus
 09.10.2016 | 1 h | Käyttöliittymän korjailua, lopetusehdot
 12.10.2016 | 1 h | Pistelaskuominaisuuden ohjelmointi, käyttöohjeet
 13.10.2016 | 2 h | Käyttöliittymän hiomista, demo, rakennekuvauksen kirjoittaminen
-14.10.2016 | 2 h | Luokka- ja sekvenssikaavioiden päivitys
+14.10.2016 | 3 h | Luokka- ja sekvenssikaavioiden päivitys, pit ja checkstyle, käyttöliittymän aloitusvalikon aloittelua
