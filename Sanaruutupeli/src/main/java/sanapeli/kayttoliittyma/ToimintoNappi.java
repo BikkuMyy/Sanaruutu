@@ -17,7 +17,7 @@ public class ToimintoNappi extends JButton {
      */
     public ToimintoNappi(String toiminto) {
         super.setText(this.toiminto = toiminto);
-        super.setFont(new Font("Monospaced", Font.BOLD, 15));
+        super.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
     }
 
     public String getToiminto() {

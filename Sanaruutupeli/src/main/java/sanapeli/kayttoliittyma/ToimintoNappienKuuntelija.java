@@ -16,15 +16,17 @@ public class ToimintoNappienKuuntelija implements ActionListener {
     private JTextArea sanakentta;
     private JTextArea pistekentta;
     private Pelilogiikka logiikka;
+    private Kayttoliittyma kayttis;
     private MerkkiNappiRuudukko napit;
 
     /**
      * Konstruktori.
      *
-     * @param logiikka Pelilogiikka-rajapinnan ilmentymä
+     * @param kayttis viittaus Kayttoliittymaan
      */
-    public ToimintoNappienKuuntelija(Pelilogiikka logiikka) {
-        this.logiikka = logiikka;
+    public ToimintoNappienKuuntelija(Kayttoliittyma kayttis) {
+        this.kayttis = kayttis;
+        this.logiikka = kayttis.getLogiikka();
     }
 
     @Override
@@ -32,7 +34,7 @@ public class ToimintoNappienKuuntelija implements ActionListener {
         ToimintoNappi toiminto = (ToimintoNappi) e.getSource();
 
         if (toiminto.getToiminto().equals("Lopeta")) {
-            logiikka.lopeta();
+            kayttis.lopeta();
         }
 
         if (toiminto.getToiminto().equals("Tyhjennä")) {

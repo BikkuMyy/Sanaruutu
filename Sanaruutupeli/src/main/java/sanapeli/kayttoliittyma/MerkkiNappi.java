@@ -37,7 +37,7 @@ public class MerkkiNappi extends JButton {
      */
     public void setMerkki() {
         super.setText(this.merkki = haeNappiinMerkkiRuudusta());
-        super.setFont(new Font("Monospaced", Font.BOLD, 20));
+        super.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
         tarkistaAktiivisuus();
     }
 

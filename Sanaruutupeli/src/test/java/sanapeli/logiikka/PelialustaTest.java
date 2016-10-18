@@ -16,7 +16,7 @@ public class PelialustaTest {
 
     @Before
     public void setUp() {
-        this.pelialusta = new Pelialusta();
+        this.pelialusta = new Pelialusta(7);
         this.ruudukko = pelialusta.getRuudukko();
     }
 

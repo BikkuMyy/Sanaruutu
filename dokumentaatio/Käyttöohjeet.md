@@ -6,6 +6,7 @@
 Pelin tavoite on muodostaa sanoja ruudukossa näkyvistä kirjaimista sanoja ja tyhjentää koko ruudukko. Samalla voi tavoitella myös mahdollisimman korkeaa pistemäärää. 
 
 ###Pelin kulku
+- Aloitusvalikosta valitaan haluttu ruudukon koko ja klikataan "aloita peli"-nappi. Oletuskoko on 7.
 - Kirjain valitaan klikkaamalla, jolloin sitä vastaava kirjain ilmestyy ruudun vasemmassa alanurkassa olevaan sanakenttään. Valittua kirjainta ei voi käyttää uudelleen.
 - Sanakentän voi tyhjentää ja kirjaimet palauttaa käytettäviksi "tyhjennä"-napilla ikkunan oikeassa alakulmassa. 
 - Sana hyväksytään painamalla "hyväksy"-nappia, jolloin tarkistetaan, onko sanaa olemassa. Peli hyväksyy vain perusmuodossa olevat sanat eli taivutetut sanat tai erisnimet eivät kelpaa.

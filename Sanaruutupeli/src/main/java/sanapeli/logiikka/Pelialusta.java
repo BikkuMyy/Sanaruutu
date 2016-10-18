@@ -23,13 +23,6 @@ public class Pelialusta {
     }
 
     /**
-     * Konstruktori 2, luo oletuskokoisen ruudukon.
-     */
-    public Pelialusta() {
-        this(7);
-    }
-
-    /**
      * Metodi luo pelin alkutilanteen, jossa pelialustan keskellä on 9 merkkiä
      * näkyvissä.
      *

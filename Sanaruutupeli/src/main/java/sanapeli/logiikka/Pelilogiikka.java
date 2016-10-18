@@ -23,4 +23,6 @@ public interface Pelilogiikka {
     public void lopeta();
 
     public int laskePisteet();
+    
+    public void kaynnista();
 }
