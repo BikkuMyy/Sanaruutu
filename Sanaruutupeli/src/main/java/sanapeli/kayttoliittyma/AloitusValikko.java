@@ -22,7 +22,7 @@ public class AloitusValikko extends JFrame {
 
     private ButtonGroup vaihtoehdot;
     private JButton aloitaNappi;
-    private DialoginKuuntelija kuuntelija;
+    private ValikonKuuntelija kuuntelija;
     private Kayttoliittyma kayttis;
 
     /**
@@ -33,7 +33,7 @@ public class AloitusValikko extends JFrame {
         this.kayttis = kayttis;
         this.vaihtoehdot = new ButtonGroup();
         this.aloitaNappi = new JButton("Aloita peli");
-        this.kuuntelija = new DialoginKuuntelija(aloitaNappi, this.kayttis);
+        this.kuuntelija = new ValikonKuuntelija(aloitaNappi, this.kayttis);
         luoJaNaytaAloitusValikko();
     }
 

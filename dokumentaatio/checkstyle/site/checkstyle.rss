@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2016</copyright>
     <item>
-      <title>File: 17,
+      <title>File: 18,
              Errors: 8,
              Warnings: 0,
              Infos: 0
@@ -83,7 +83,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  7
+                  8
                 </td>
               </tr>
                           <tr>
@@ -144,6 +144,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="${project.url}/checkstyle.html#sanapeli.kayttoliittyma.PeliIkkuna.java">sanapeli/kayttoliittyma/PeliIkkuna.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="${project.url}/checkstyle.html#sanapeli.kayttoliittyma.MerkkiNappiRuudukko.java">sanapeli/kayttoliittyma/MerkkiNappiRuudukko.java</a>
                 </td>
                 <td>
@@ -186,7 +200,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#sanapeli.kayttoliittyma.DialoginKuuntelija.java">sanapeli/kayttoliittyma/DialoginKuuntelija.java</a>
+                  <a href="${project.url}/checkstyle.html#sanapeli.kayttoliittyma.ValikonKuuntelija.java">sanapeli/kayttoliittyma/ValikonKuuntelija.java</a>
                 </td>
                 <td>
                   0
@@ -279,7 +293,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  1
+                  0
                 </td>
               </tr>
                       </tbody>

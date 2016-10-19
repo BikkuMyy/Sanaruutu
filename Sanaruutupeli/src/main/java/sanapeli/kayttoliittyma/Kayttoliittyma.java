@@ -26,7 +26,10 @@ public class Kayttoliittyma implements Runnable {
     @Override
     public void run() {
     }
-
+    
+    /**
+     * Metodi totetuttaa pelin aloittamisen vaatimat toiminnot.
+     */
     public void aloitaPeli() {
         Pelinhallinta hallinta = new Pelinhallinta(koko);
         this.logiikka = hallinta;
@@ -35,7 +38,10 @@ public class Kayttoliittyma implements Runnable {
         this.peli = new PeliIkkuna(this, koko);
     }
     
-    public void lopeta(){
+    /**
+     * Metodi toteuttaa pelin lopettamisen vaatimat toiminnot.
+     */
+    public void lopeta() {
         peli.dispose();
         aloitus.setVisible(true);
     }

@@ -29,15 +29,18 @@ public class Merkki extends Sisalto {
     }
 
     private void asetaPisteet() {
+        this.pisteet = 4;
+        
         if ("AEINST".contains(merkki)) {
             this.pisteet = 1;
-        } else if ("UOÄKLM".contains(merkki)) {
-            this.pisteet = 2;
-        } else if ("PRHJYV".contains(merkki)) {
-            this.pisteet = 3;
-        } else {
-            this.pisteet = 4;
         }
+        if ("UOÄKLM".contains(merkki)) {
+            this.pisteet = 2;
+        }
+        if ("PRHJYV".contains(merkki)) {
+            this.pisteet = 3;
+        }
+
     }
 
 }

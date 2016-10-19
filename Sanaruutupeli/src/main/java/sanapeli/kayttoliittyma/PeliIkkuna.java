@@ -21,6 +21,11 @@ public class PeliIkkuna extends JFrame {
     private ToimintoNappienKuuntelija toimintoKuuntelija;
     private int koko;
 
+    /**
+     * Konstruktori.
+     * @param kayttis viittaus käyttöliittymään
+     * @param koko peliruudukon koko
+     */
     public PeliIkkuna(Kayttoliittyma kayttis, int koko) {
         this.kayttis = kayttis;
         this.koko = koko;

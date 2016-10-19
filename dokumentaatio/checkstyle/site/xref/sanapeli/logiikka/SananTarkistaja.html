@@ -29,7 +29,7 @@
 <a class="jxr_linenumber" name="L21" href="#L21">21</a>  <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>      <strong class="jxr_keyword">public</strong> <a href="../../sanapeli/logiikka/SananTarkistaja.html">SananTarkistaja</a>(String tiedostonNimi) {
 <a class="jxr_linenumber" name="L23" href="#L23">23</a>          <strong class="jxr_keyword">this</strong>.sanat = <strong class="jxr_keyword">new</strong> HashSet();
-<a class="jxr_linenumber" name="L24" href="#L24">24</a>          <strong class="jxr_keyword">this</strong>.tiedosto = <strong class="jxr_keyword">new</strong> File(tiedostonNimi);
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>          <strong class="jxr_keyword">this</strong>.tiedosto = <strong class="jxr_keyword">new</strong> File(getClass().getResource(tiedostonNimi).getFile());
 <a class="jxr_linenumber" name="L25" href="#L25">25</a>          lueTiedostoHashSetiin();
 <a class="jxr_linenumber" name="L26" href="#L26">26</a>      }
 <a class="jxr_linenumber" name="L27" href="#L27">27</a>  
@@ -58,7 +58,7 @@
 <a class="jxr_linenumber" name="L50" href="#L50">50</a>          }
 <a class="jxr_linenumber" name="L51" href="#L51">51</a>  
 <a class="jxr_linenumber" name="L52" href="#L52">52</a>          <strong class="jxr_keyword">while</strong> (lukija.hasNextLine()) {
-<a class="jxr_linenumber" name="L53" href="#L53">53</a>              <strong class="jxr_keyword">this</strong>.sanat.add(lukija.nextLine().split(<span class="jxr_string">"-"</span>)[1]);
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>              <strong class="jxr_keyword">this</strong>.sanat.add(lukija.nextLine());
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>          }
 <a class="jxr_linenumber" name="L55" href="#L55">55</a>  
 <a class="jxr_linenumber" name="L56" href="#L56">56</a>          lukija.close();

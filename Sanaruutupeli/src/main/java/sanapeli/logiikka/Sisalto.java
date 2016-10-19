@@ -17,6 +17,10 @@ public abstract class Sisalto {
         this.satunnainen = new Satunnaistaja("kirjaimet.txt");
     }
     
+    /**
+     * Metodi palauttaa sisältöön liittyvän pistemäärän.
+     * @return pisteet
+     */
     public abstract int getPisteet();
 
     @Override
