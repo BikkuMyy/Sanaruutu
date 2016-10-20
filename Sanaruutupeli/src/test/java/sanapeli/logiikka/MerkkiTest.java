@@ -46,7 +46,7 @@ public class MerkkiTest {
 
     @Test
     public void tulostusToimiiOikein() {
-        assertTrue("AEIOUYÄÖHJKLMNPRSTV".contains(merkki.toString()));
+        assertTrue("AEIOUYÄÖHJKLMNPRSTVD".contains(merkki.toString()));
     }
 
 }

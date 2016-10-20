@@ -2,6 +2,7 @@ package sanapeli.kayttoliittyma;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Insets;
 import javax.swing.JButton;
 import sanapeli.logiikka.Pelilogiikka;
 
@@ -16,6 +17,7 @@ public class MerkkiNappi extends JButton {
     private String merkki;
     private int y;
     private int x;
+    private int koko;
 
     /**
      * Konstruktori.
@@ -23,21 +25,26 @@ public class MerkkiNappi extends JButton {
      * @param y napin y-koordinaatti
      * @param x napin x-koordinaatti
      * @param logiikka Pelilogiikka-rajapinnan ilmentymä
+     * @param koko ruudukon koko
      */
-    public MerkkiNappi(int y, int x, Pelilogiikka logiikka) {
+    public MerkkiNappi(int y, int x, Pelilogiikka logiikka, int koko) {
         this.logiikka = logiikka;
         this.y = y;
         this.x = x;
+        this.koko = koko;
         setMerkki();
     }
 
     /**
      * Metodi hakee merkki-muuttujaan sisällön napin koordinaatteja vastaavasta
      * ruudusta ja asettaa sen JButtonissa näkyväksi tekstiksi.
+     *
      */
     public void setMerkki() {
         super.setText(this.merkki = haeNappiinMerkkiRuudusta());
-        super.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+        super.setMargin(new Insets(1, 1, 1, 1));
+        super.setFont(new Font("SansSerif", Font.BOLD, 25 - koko));
+
         tarkistaAktiivisuus();
     }
 
@@ -85,7 +92,7 @@ public class MerkkiNappi extends JButton {
             setEnabled(true);
         }
     }
-    
+
     public String getMerkki() {
         return this.merkki;
     }

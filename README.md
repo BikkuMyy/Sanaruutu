@@ -8,7 +8,5 @@ Ruudukossa on kerrallaan vain muutama kirjain näkyvillä, joista sana tulee muo
 - [Käyttöhjeet](dokumentaatio/Käyttöohjeet.md)
 - [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
 - [Checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/BikkuMyy/Sanaruutu/blob/master/dokumentaatio/checkstyle/site/checkstyle.html)
-- [PIT-raportti](https://htmlpreview.github.io/?https://github.com/BikkuMyy/Sanaruutu/blob/master/dokumentaatio/pit/201610141517/index.html)
+- [PIT-raportti](https://htmlpreview.github.io/?https://github.com/BikkuMyy/Sanaruutu/blob/master/dokumentaatio/pit/201610201242/index.html)
 
-###Huomioitavaa
-Jar-tiedosto ei huolinut sisäänsä ohjelman toiminnalle olennaisia .txt-tiedostoja, joten se ei täysin toimi. Painittiin tämän kanssa ennen deadlinea eikä ratkaisua vielä löytynyt.

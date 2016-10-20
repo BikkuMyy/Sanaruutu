@@ -1,6 +1,7 @@
 package sanapeli.logiikka;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -12,22 +13,23 @@ import java.util.Collections;
  */
 public class Satunnaistaja {
 
-    private File tiedosto;
-    private List<String> rivit;
+    private InputStream tiedosto;
+    private List<String> merkit;
 
     /**
      * Konstruktori.
+     *
      * @param tiedostonNimi luettavan tiedoston nimi
      */
     public Satunnaistaja(String tiedostonNimi) {
-        this.tiedosto = new File(getClass().getResource(tiedostonNimi).getFile());
-        this.rivit = new ArrayList<>();
+        this.tiedosto = getClass().getResourceAsStream(tiedostonNimi);
+        this.merkit = new ArrayList<>();
         lueTiedostoListaan();
-        //erillinen luokka tiedoston lukemiselle ja randomizingille..?
     }
 
     /**
-     * Metodi lukee tiedoston listaan. 
+     * Metodi lukee tiedoston listaan tai tulostaa virheilmoituksen ja kutsuu
+     * lisaaListanMerkit() -metodia jos lukeminen ei onnistu.
      */
     private void lueTiedostoListaan() {
 
@@ -36,30 +38,41 @@ public class Satunnaistaja {
         try {
             lukija = new Scanner(tiedosto, "UTF-8");
         } catch (Exception e) {
+            lisaaListaanMerkit();
             System.out.println("Tiedoston lukeminen epäonnistui. Virhe: " + e.getMessage());
             return;
         }
 
         while (lukija.hasNextLine()) {
-            this.rivit.add(lukija.nextLine());
+            this.merkit.add(lukija.nextLine());
         }
 
         lukija.close();
     }
-    
-    /** 
+
+    /**
      * Metodi sekoittaa listan ja palauttaa merkin sen ensimmäisestä indeksistä.
-     * 
+     *
      * @return satunnainen merkki
      */
-
     public String satunnainenMerkki() {
-        Collections.shuffle(rivit);
-        return rivit.get(0);
+        Collections.shuffle(merkit);
+        return merkit.get(0);
     }
 
-    public List<String> getRivit() {
-        return rivit;
+    public List<String> getMerkit() {
+        return merkit;
+    }
+
+    /**
+     * Metodi lisää merkkijonon merkit listaan.
+     */
+    public void lisaaListaanMerkit() {
+        String kirjaimet = "AAAAAAAAAAAAEEEEEEEEIIIIIIIIIIOOOOOUUUUUÄÄÄÄÄYYÖHHJJKKKKKLLLLLLMMMMNNNNNNNNPPRRRSSSSSSSSTTTTTTTTTVVDÖ";
+        for (int i = 0; i < kirjaimet.length(); i++) {
+            merkit.add("" + kirjaimet.charAt(i));
+
+        }
     }
 
 }

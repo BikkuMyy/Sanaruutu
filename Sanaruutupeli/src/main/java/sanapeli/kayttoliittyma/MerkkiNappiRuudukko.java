@@ -52,7 +52,7 @@ public class MerkkiNappiRuudukko {
     }
 
     private MerkkiNappi luoMerkkiNappi(int y, int x) {
-        MerkkiNappi nappi = new MerkkiNappi(y, x, logiikka);
+        MerkkiNappi nappi = new MerkkiNappi(y, x, logiikka, koko);
         nappi.setBackground(Color.LIGHT_GRAY);
         nappi.addActionListener(merkkiKuuntelija);
 
