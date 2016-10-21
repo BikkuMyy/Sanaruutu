@@ -30,11 +30,6 @@ public class Pelinhallinta implements Pelilogiikka {
     }
 
     @Override
-    public void lopeta() {
-        System.exit(0);
-    }
-
-    @Override
     public Ruutu[][] getRuudukko() {
         return pelialusta.getRuudukko();
     }

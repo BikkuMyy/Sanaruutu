@@ -1,6 +1,5 @@
 package sanapeli.logiikka;
 
-import java.io.File;
 import java.io.InputStream;
 import java.util.HashSet;
 import java.util.Scanner;

@@ -29,4 +29,5 @@ Päivä | Tunnit | Kuvaus
 17.10.2016 | 2 h | Käyttöliittymän rakenteen hiomista ja refaktorointia, aloitusvalikon ohjelmointia
 18.10.2016 | 1 h | Aloitusvalikon, peli-ikkunan ja käyttöliittymän yhteistyö toimimaan
 19.10.2016 | 1 h | Hienosäätöä, vikasietotila (jos tiedostoja ei voida lukea)
-20.10.2016 | 1 h | Checkstyle ja pit-raportit, luoto jar-tiedosto toimii oikein (paja)
+20.10.2016 | 1 h | Checkstyle ja pit-raportit, luotu jar-tiedosto toimii oikein (paja)
+21.10.2016 | 1 h | Luokkakaavioiden ja aihemäärittelyn päivitys, testausdokumentaation kirjoittaminen

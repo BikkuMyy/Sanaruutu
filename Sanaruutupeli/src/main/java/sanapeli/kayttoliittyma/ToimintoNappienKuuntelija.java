@@ -76,7 +76,7 @@ public class ToimintoNappienKuuntelija implements ActionListener {
         }
 
         if (napit.kaikkiInaktiivisia()) {
-            logiikka.lopeta();
+            kayttis.lopeta();
         }
     }
 

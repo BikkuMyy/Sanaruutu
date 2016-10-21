@@ -13,7 +13,7 @@ public class Pelialusta {
     private ArrayList<Ruutu> valitut;
 
     /**
-     * Konstruktori 1.
+     * Konstruktori.
      *
      * @param koko luotavan peliruudukon sivun pituus ruuduissa
      */
