@@ -1,4 +1,4 @@
-##Aihemäärittely
+## Aihemäärittely
 
 **Aihe:** Sanaruudukkopeli
 
@@ -19,14 +19,14 @@ Peliruudukko on oletuskooltaa 7x7, mutta pelaajalle voisi antaa mahdollisuuden e
 - Sanan hyväksyminen
 - Pelin lopettaminen
 
-##Rakennekuvaus
+## Rakennekuvaus
 
 Ohjelmassa on kaksi pakkausta, sanapeli.logiikka ja sanapeli.kayttoliittyma. Pakkauksia yhdistää rajapinta Pelilogiikka, jonka toteuttaa logiikan puolella Pelinhallinta-luokka. Pelinhallinta luo pelialustan ja sanantarkistajan. Pelialusta-luokka sisältää kaksiulotteisen taulukkomuotoisen pelialustan, johon tallennetaan Ruutu-olioita. Pelialusta sisältää myös listan pelissä yhdellä hetkellä valittuna olevia nappeja vastaavista Ruutu-olioista. Ruutu-luokan attribuutteja ovat sen x- ja y-koordinaatit sekä sisältö. Sisalto on abstrakti luokka, jonka Merkki-luokka perii. Merkki-luokka sisältää merkin ja siitä saatavat pisteet. Merkki arvotaan Satunnaistaja-olion avulla kirjaimet sisältävästä tiedostosta. SananTarkistaja-luokka lukee käytössä olevan sanalistan tiedostosta ja tarkistaa, onko sille annettu sana listalla.
 
 Kayttoliittyma-luokka luo kaksi JFramea - AloitusValikon ja PeliIkkunan, niiden komponentit ja tapahtumienkuuntelijat sekä Pelinhallinta-luokan. AloitusValikossa annetaan pelin ohjeet, mahdollisuus valita ruudukon koko ja aloittaa peli. PeliIkkuna on varsinainen pelinäkymä. MerkkiNappiRuudukko luo nimensä mukaisesti MerkkiNappi-olioita sisältävän ruudukon. MerkkiNappi-oliot saavat tiedon sisältämästään merkistä logiikan puolelta Pelilogiikka-rajapinnan kautta. MerkkiNappienKuuntelija vaihtaa klikattujen nappien väriä, lisää niiden sisältämät merkit sanakenttään ja nappeja vastaavat ruudut Pelialustan valittujen listalle. ToimintoNappienKuuntelija vastaa ToimintoNappi-olioiden eli "hyväksy", "tyhjennä" ja "lopeta" -nappien klikkauksesta seuraavista tapahtumista. Se toimii yhteistyössä logiikan kanssa Pelilogiikka-rajapinnan kautta mm. kun sana pitää tarkistaa ennen hyväksymistä ja uudet merkit päivittää pelialustalle hyväksymisen jälkeen.
 
 
-##Luokkakaaviot
+## Luokkakaaviot
 
 - Ensisijainen luokkakaavio, jossa logiikka- ja käyttöliittymäpakkaukset eritelty
 ![PakkausLuokkakaavio](/dokumentaatio/Luokkakaavio.png "Pakkaus-luokkakaavio")
@@ -34,7 +34,7 @@ Kayttoliittyma-luokka luo kaksi JFramea - AloitusValikon ja PeliIkkunan, niiden 
 - Luokkakaavio, jossa myös kytkentärajoitukset
 ![Luokkakaavio](/dokumentaatio/YumlLuokkakaavio.png "YumlLuokkakaavio")
 
-##Sekvenssikaaviot
+## Sekvenssikaaviot
 
 - Sekvenssikaavio - merkkinapin klikkaaminen
 ![Sekvenssikaavio](/dokumentaatio/Sekvenssikaavio-merkkinappi2.png "MerkkiNappi-sekvenssikaavio")
